@@ -1,5 +1,4 @@
 #include "cliff.h"
-#include "math.h"
 
 USING_NS_CC;
 
@@ -19,18 +18,24 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     shouldAdd = !shouldAdd;
     double random = (arc4random_uniform(100) / 75.0) + (shouldAdd?lastScaleValue:-lastScaleValue);
     lastScaleValue = random;
-    leftCliff->setScaleX(random + 0.5);
-//    leftCliff->setScaleY(0.5);
-    CCLOG("%.2f", random);
 
+    leftCliff->setScaleX(random + 0.75);
     leftCliff->setPosition(Point(origin.x, visibleSize.height + leftCliff->getContentSize().height));
+
+    layer->addChild(leftCliff, 1);
+    
+    Sprite * shadowCliff = Sprite::create("cliff.png");
+    
+    shadowCliff->setScaleX(random + 1.25);
+    shadowCliff->setScaleY(1.20);
+    shadowCliff->setPosition(Point(origin.x, visibleSize.height + leftCliff->getContentSize().height - 10));
+    shadowCliff->setColor(Color3B(160, 95, 50));
+    
+    layer->addChild(shadowCliff, 0);
+    
     MoveBy* moveBy = MoveBy::create(10, Vec2(0, -visibleSize.height * 1.2));
     leftCliff->runAction(moveBy);
-
-    //leftCliff->setScaleX(1.5);
-    
-    layer->addChild(leftCliff);
-    
+    shadowCliff->runAction(moveBy->clone());
     
 //    auto topPipeBody = PhysicsBody::createBox( topPipe->getContentSize( ) );
 //    auto bottomPipeBody = PhysicsBody::createBox( bottomPipe->getContentSize( ) );
