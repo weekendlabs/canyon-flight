@@ -20,7 +20,9 @@ public:
     CREATE_FUNC(GameScene);
     
 private:
-    Cliff * cliff;
+    Cliff cliff;
+
+    void spawnCliff(float dt);
 };
 
 #endif // __GAME_SCENE_H__

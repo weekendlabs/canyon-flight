@@ -1,4 +1,5 @@
 #include "cliff.h"
+#include "math.h"
 
 USING_NS_CC;
 
@@ -12,10 +13,19 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     
     // @TODO: Create a texture out of cliff.png
     
-    auto leftCliff = Sprite::create("cliff.png");
+    Sprite* leftCliff = Sprite::create("cliff.png");
     
-    leftCliff->setPosition(Point(this->origin.x, this->visibleSize.height));
-    leftCliff->setScaleX(1.5);
+    //@TODO: for changing the height of cliff - still to be optimised
+    double random = CCRANDOM_0_1() * 10;
+    int flooredValue = floor(random);
+    int cliffScale = flooredValue / 2;
+    leftCliff->setScaleX(cliffScale);
+
+    leftCliff->setPosition(Point(this->origin.x ,  this->visibleSize.height + leftCliff->getContentSize().height));
+    MoveBy* moveBy = MoveBy::create(2, Vec2(this->origin.x , - this->visibleSize.height * 1.2));
+    leftCliff->runAction(moveBy);
+
+    //leftCliff->setScaleX(1.5);
     
     layer->addChild(leftCliff);
     

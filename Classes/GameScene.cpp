@@ -32,9 +32,13 @@ bool GameScene::init()
     backgroundLayer->setPosition(Point(0, 0));
     this->addChild(backgroundLayer);
     
-    this->cliff = new Cliff();
-    cliff->spawnCliff(this);
+    this->schedule(schedule_selector(GameScene::spawnCliff), 0.001);
+
     
-    
+
     return true;
+}
+
+void GameScene::spawnCliff(float dt){
+	cliff.spawnCliff(this);
 }
