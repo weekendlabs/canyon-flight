@@ -32,8 +32,36 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     
     layer->addChild(shadowCliff, 0);
     
+
+    //right cliff
+    Sprite* rightCliff = Sprite::create("cliff.png");
+    rightCliff->setScaleX(random + 0.75);
+    CCLOG("random value:%f",random);
+    int  actualWidthOfLeftCliff = floor((random + 0.75)  * 100);
+
+    CCLOG("screen size:%f",visibleSize.width);
+    CCLOG("actul width: %d",actualWidthOfLeftCliff);
+    if(actualWidthOfLeftCliff < 0)
+        	actualWidthOfLeftCliff = -actualWidthOfLeftCliff;
+    CCLOG("modified actul width: %d",actualWidthOfLeftCliff);
+
+    double availableWidth = visibleSize.width - actualWidthOfLeftCliff;
+    double rightCliffPosition = visibleSize.width - actualWidthOfLeftCliff ;
+    CCLOG("right cliff position:%f",rightCliffPosition);
+    if(rightCliffPosition < actualWidthOfLeftCliff){
+    	rightCliff->setPosition(Vec2(actualWidthOfLeftCliff+(visibleSize.width - ((rightCliffPosition + actualWidthOfLeftCliff) * 0.5)), leftCliff->getPositionY()));
+    	CCLOG("less");
+    }
+    else{
+    	rightCliff->setPosition(Vec2(visibleSize.width - actualWidthOfLeftCliff, leftCliff->getPositionY()));
+    	CCLOG("more");
+    }
+    layer->addChild(rightCliff,1);
+
     MoveBy* moveBy = MoveBy::create(10, Vec2(0, -visibleSize.height * 1.2));
     leftCliff->runAction(moveBy);
+
+    rightCliff->runAction(moveBy->clone());
     shadowCliff->runAction(moveBy->clone());
     
 //    auto topPipeBody = PhysicsBody::createBox( topPipe->getContentSize( ) );
