@@ -2,40 +2,42 @@
 
 USING_NS_CC;
 
+#define SCALE_640_WIDTH(x, width) (((x) / 640.0f) * width)
+#define SCALE_960_HEIGHT(y, height) (((y) / 960.0f) * height)
+
 Cliff::Cliff() {
     visibleSize = Director::getInstance( )->getVisibleSize( );
     origin = Director::getInstance( )->getVisibleOrigin( );
 }
 
 void Cliff::spawnCliff(cocos2d::Layer * layer) {
-    CCLOG("SPAWN CLIFF");
-    
     // @TODO: Create a texture out of cliff.png
     
     Sprite* leftCliff = Sprite::create("cliff.png");
     
     //@TODO: for changing the height of cliff - still to be optimised
     shouldAdd = !shouldAdd;
-    double random = (cocos2d::random(0, 100) / 75.0) + (shouldAdd?lastScaleValue:-lastScaleValue);
+    double random = (cocos2d::random(0, 100) / SCALE_640_WIDTH(75.0, visibleSize.width)) + (shouldAdd?lastScaleValue:-lastScaleValue);
     lastScaleValue = random;
 
-    leftCliff->setScaleX(random + 0.75);
+    leftCliff->setScaleX(random + SCALE_640_WIDTH(0.75, visibleSize.width));
     leftCliff->setPosition(Point(origin.x, visibleSize.height + leftCliff->getContentSize().height));
 
     layer->addChild(leftCliff, 1);
     
     Sprite * leftCliffShadow = Sprite::create("cliff.png");
     
-    leftCliffShadow->setScaleX(random + 1.25);
-    leftCliffShadow->setPosition(Point(origin.x, visibleSize.height + leftCliff->getContentSize().height - 15));
+    leftCliffShadow->setScaleX(random + SCALE_640_WIDTH(1.25, visibleSize.width));
+    
+    leftCliffShadow->setPosition(Point(origin.x, visibleSize.height + leftCliff->getContentSize().height - SCALE_960_HEIGHT(15, visibleSize.height)));
     leftCliffShadow->setColor(Color3B(160, 95, 50));
     
     layer->addChild(leftCliffShadow, 0);
 
     //right cliff
     Sprite* rightCliff = Sprite::create("cliff.png");
-    rightCliff->setScaleX(random + 0.75);
-    double actualWidthOfLeftCliff = (random + 0.75) * leftCliff->getContentSize().width;
+    rightCliff->setScaleX(random + SCALE_640_WIDTH(0.75, visibleSize.width));
+    double actualWidthOfLeftCliff = (random + SCALE_640_WIDTH(0.75, visibleSize.width)) * leftCliff->getContentSize().width;
 
     double rightCliffX = visibleSize.width - actualWidthOfLeftCliff * 0.5;
     
@@ -45,8 +47,8 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
 
     Sprite * rightCliffShadow = Sprite::create("cliff.png");
     
-    rightCliffShadow->setScaleX(random + 1.25);
-    rightCliffShadow->setPosition(Point(rightCliff->getPositionX() + 35, visibleSize.height + rightCliff->getContentSize().height - 15));
+    rightCliffShadow->setScaleX(random + SCALE_640_WIDTH(1.25, visibleSize.width));
+    rightCliffShadow->setPosition(Point(rightCliff->getPositionX() + 35, visibleSize.height + rightCliff->getContentSize().height - SCALE_960_HEIGHT(15, visibleSize.height)));
     rightCliffShadow->setColor(Color3B(160, 95, 50));
     
     layer->addChild(rightCliffShadow, 0);
