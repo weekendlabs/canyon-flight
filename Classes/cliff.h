@@ -13,9 +13,6 @@ public:
 private:
     cocos2d::Size visibleSize;
     cocos2d::Vec2 origin;
-    
-    bool shouldAdd = true;
-    double lastScaleValue = 1.0;
 };
 
 #endif /* defined(__canyon_flight__cliff__) */
