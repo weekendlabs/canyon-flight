@@ -24,45 +24,39 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
 
     layer->addChild(leftCliff, 1);
     
-    Sprite * shadowCliff = Sprite::create("cliff.png");
+    Sprite * leftCliffShadow = Sprite::create("cliff.png");
     
-    shadowCliff->setScaleX(random + 1.25);
-    shadowCliff->setPosition(Point(origin.x, visibleSize.height + leftCliff->getContentSize().height - 15));
-    shadowCliff->setColor(Color3B(160, 95, 50));
+    leftCliffShadow->setScaleX(random + 1.25);
+    leftCliffShadow->setPosition(Point(origin.x, visibleSize.height + leftCliff->getContentSize().height - 15));
+    leftCliffShadow->setColor(Color3B(160, 95, 50));
     
-    layer->addChild(shadowCliff, 0);
-    
+    layer->addChild(leftCliffShadow, 0);
 
     //right cliff
     Sprite* rightCliff = Sprite::create("cliff.png");
     rightCliff->setScaleX(random + 0.75);
-    CCLOG("random value:%f",random);
-    int  actualWidthOfLeftCliff = floor((random + 0.75)  * 100);
+    double actualWidthOfLeftCliff = (random + 0.75) * leftCliff->getContentSize().width;
 
-    CCLOG("screen size:%f",visibleSize.width);
-    CCLOG("actul width: %d",actualWidthOfLeftCliff);
-    if(actualWidthOfLeftCliff < 0)
-        	actualWidthOfLeftCliff = -actualWidthOfLeftCliff;
-    CCLOG("modified actul width: %d",actualWidthOfLeftCliff);
+    double rightCliffX = visibleSize.width - actualWidthOfLeftCliff * 0.5;
+    
+    rightCliff->setPosition(Point(rightCliffX + actualWidthOfLeftCliff * 0.5, leftCliff->getPositionY()));
+   
+    layer->addChild(rightCliff, 1);
 
-    double availableWidth = visibleSize.width - actualWidthOfLeftCliff;
-    double rightCliffPosition = visibleSize.width - actualWidthOfLeftCliff ;
-    CCLOG("right cliff position:%f",rightCliffPosition);
-    if(rightCliffPosition < actualWidthOfLeftCliff){
-    	rightCliff->setPosition(Vec2(actualWidthOfLeftCliff+(visibleSize.width - ((rightCliffPosition + actualWidthOfLeftCliff) * 0.5)), leftCliff->getPositionY()));
-    	CCLOG("less");
-    }
-    else{
-    	rightCliff->setPosition(Vec2(visibleSize.width - actualWidthOfLeftCliff, leftCliff->getPositionY()));
-    	CCLOG("more");
-    }
-    layer->addChild(rightCliff,1);
-
+    Sprite * rightCliffShadow = Sprite::create("cliff.png");
+    
+    rightCliffShadow->setScaleX(random + 1.25);
+    rightCliffShadow->setPosition(Point(rightCliff->getPositionX() + 35, visibleSize.height + rightCliff->getContentSize().height - 15));
+    rightCliffShadow->setColor(Color3B(160, 95, 50));
+    
+    layer->addChild(rightCliffShadow, 0);
+    
     MoveBy* moveBy = MoveBy::create(10, Vec2(0, -visibleSize.height * 1.2));
-    leftCliff->runAction(moveBy);
 
+    leftCliff->runAction(moveBy);
     rightCliff->runAction(moveBy->clone());
-    shadowCliff->runAction(moveBy->clone());
+    leftCliffShadow->runAction(moveBy->clone());
+    rightCliffShadow->runAction(moveBy->clone());
     
 //    auto topPipeBody = PhysicsBody::createBox( topPipe->getContentSize( ) );
 //    auto bottomPipeBody = PhysicsBody::createBox( bottomPipe->getContentSize( ) );
