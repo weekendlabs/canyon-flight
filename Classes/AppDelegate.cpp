@@ -36,6 +36,13 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
+    
+    // @TODO: Add multi-device search paths code
+    // Temporary stuff for now
+    auto fileUtils = FileUtils::getInstance();
+    fileUtils->addSearchPath("iphonehd");
+    
+    glview->setDesignResolutionSize(640, 960, ResolutionPolicy::NO_BORDER);
 
     // create a scene. it's an autorelease object
     auto scene = GameScene::createScene();

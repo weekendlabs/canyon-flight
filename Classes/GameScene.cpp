@@ -32,5 +32,9 @@ bool GameScene::init()
     backgroundLayer->setPosition(Point(0, 0));
     this->addChild(backgroundLayer);
     
+    this->cliff = new Cliff();
+    cliff->spawnCliff(this);
+    
+    
     return true;
 }

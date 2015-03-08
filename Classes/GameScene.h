@@ -2,6 +2,7 @@
 #define __GAME_SCENE_H__
 
 #include "cocos2d.h"
+#include "cliff.h"
 
 class GameScene : public cocos2d::Layer
 {
@@ -17,6 +18,9 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(GameScene);
+    
+private:
+    Cliff * cliff;
 };
 
 #endif // __GAME_SCENE_H__
