@@ -16,7 +16,7 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     
     //@TODO: for changing the height of cliff - still to be optimised
     shouldAdd = !shouldAdd;
-    double random = (arc4random_uniform(100) / 75.0) + (shouldAdd?lastScaleValue:-lastScaleValue);
+    double random = (cocos2d::random(0, 100) / 75.0) + (shouldAdd?lastScaleValue:-lastScaleValue);
     lastScaleValue = random;
 
     leftCliff->setScaleX(random + 0.75);
@@ -27,8 +27,7 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     Sprite * shadowCliff = Sprite::create("cliff.png");
     
     shadowCliff->setScaleX(random + 1.25);
-    shadowCliff->setScaleY(1.20);
-    shadowCliff->setPosition(Point(origin.x, visibleSize.height + leftCliff->getContentSize().height - 10));
+    shadowCliff->setPosition(Point(origin.x, visibleSize.height + leftCliff->getContentSize().height - 15));
     shadowCliff->setColor(Color3B(160, 95, 50));
     
     layer->addChild(shadowCliff, 0);
