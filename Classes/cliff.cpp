@@ -16,13 +16,15 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     Sprite* leftCliff = Sprite::create("cliff.png");
     
     //@TODO: for changing the height of cliff - still to be optimised
-    double random = CCRANDOM_0_1() * 10;
-    int flooredValue = floor(random);
-    int cliffScale = flooredValue / 2;
-    leftCliff->setScaleX(cliffScale);
+    shouldAdd = !shouldAdd;
+    double random = (arc4random_uniform(100) / 75.0) + (shouldAdd?lastScaleValue:-lastScaleValue);
+    lastScaleValue = random;
+    leftCliff->setScaleX(random + 0.5);
+//    leftCliff->setScaleY(0.5);
+    CCLOG("%.2f", random);
 
-    leftCliff->setPosition(Point(this->origin.x ,  this->visibleSize.height + leftCliff->getContentSize().height));
-    MoveBy* moveBy = MoveBy::create(2, Vec2(this->origin.x , - this->visibleSize.height * 1.2));
+    leftCliff->setPosition(Point(origin.x, visibleSize.height + leftCliff->getContentSize().height));
+    MoveBy* moveBy = MoveBy::create(10, Vec2(0, -visibleSize.height * 1.2));
     leftCliff->runAction(moveBy);
 
     //leftCliff->setScaleX(1.5);

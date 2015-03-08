@@ -20,21 +20,14 @@ Scene* GameScene::createScene()
 // on "init" you need to initialize your instance
 bool GameScene::init()
 {
-    if ( !Layer::init() )
-    {
+    if (!LayerColor::initWithColor(Color4B(255, 181, 78, 255))) {
         return false;
     }
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
-    auto backgroundLayer = LayerColor::create(Color4B(255, 181, 78, 255), visibleSize.width, visibleSize.height);
-    backgroundLayer->setPosition(Point(0, 0));
-    this->addChild(backgroundLayer);
-    
-    this->schedule(schedule_selector(GameScene::spawnCliff), 0.001);
-
-    
+    this->schedule(schedule_selector(GameScene::spawnCliff), 0.40);
 
     return true;
 }
