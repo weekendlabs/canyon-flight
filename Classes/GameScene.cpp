@@ -29,9 +29,15 @@ bool GameScene::init()
     
     this->schedule(schedule_selector(GameScene::spawnCliff), 0.40);
 
+    this->schedule(schedule_selector(GameScene::spawnObstacle), 2.5);
+    
     return true;
 }
 
 void GameScene::spawnCliff(float dt){
 	cliff.spawnCliff(this);
+}
+
+void GameScene::spawnObstacle(float dt) {
+    obstacle.spawnObstacle(this);
 }

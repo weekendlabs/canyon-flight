@@ -20,6 +20,8 @@
 		470C3C721AAC1551002019DC /* cliff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 470C3C6F1AAC1551002019DC /* cliff.cpp */; };
 		470C3C751AAC19A6002019DC /* iphonehd in Resources */ = {isa = PBXBuildFile; fileRef = 470C3C741AAC19A6002019DC /* iphonehd */; };
 		470C3C761AAC19A6002019DC /* iphonehd in Resources */ = {isa = PBXBuildFile; fileRef = 470C3C741AAC19A6002019DC /* iphonehd */; };
+		47137C751AADF1840056CFA5 /* obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47137C731AADF1840056CFA5 /* obstacle.cpp */; };
+		47137C761AADF1840056CFA5 /* obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47137C731AADF1840056CFA5 /* obstacle.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -107,6 +109,9 @@
 		470C3C6F1AAC1551002019DC /* cliff.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cliff.cpp; sourceTree = "<group>"; };
 		470C3C701AAC1551002019DC /* cliff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cliff.h; sourceTree = "<group>"; };
 		470C3C741AAC19A6002019DC /* iphonehd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = iphonehd; sourceTree = "<group>"; };
+		47137C731AADF1840056CFA5 /* obstacle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = obstacle.cpp; sourceTree = "<group>"; };
+		47137C741AADF1840056CFA5 /* obstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = obstacle.h; sourceTree = "<group>"; };
+		47137C771AADF1E20056CFA5 /* definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = definitions.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -279,6 +284,9 @@
 				46880B8719C43A87006E1F66 /* GameScene.h */,
 				470C3C6F1AAC1551002019DC /* cliff.cpp */,
 				470C3C701AAC1551002019DC /* cliff.h */,
+				47137C731AADF1840056CFA5 /* obstacle.cpp */,
+				47137C741AADF1840056CFA5 /* obstacle.h */,
+				47137C771AADF1E20056CFA5 /* definitions.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -469,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47137C751AADF1840056CFA5 /* obstacle.cpp in Sources */,
 				470C3C711AAC1551002019DC /* cliff.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameScene.cpp in Sources */,
@@ -484,6 +493,7 @@
 			files = (
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				47137C761AADF1840056CFA5 /* obstacle.cpp in Sources */,
 				470C3C721AAC1551002019DC /* cliff.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* GameScene.cpp in Sources */,
 			);

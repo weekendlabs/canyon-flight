@@ -1,9 +1,7 @@
 #include "cliff.h"
+#include "definitions.h"
 
 USING_NS_CC;
-
-#define SCALE_640_WIDTH(x, width) (((x) / 640.0f) * width)
-#define SCALE_960_HEIGHT(y, height) (((y) / 960.0f) * height)
 
 Cliff::Cliff() {
     visibleSize = Director::getInstance( )->getVisibleSize( );

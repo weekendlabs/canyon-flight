@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "cliff.h"
+#include "obstacle.h"
 
 class GameScene : public cocos2d::LayerColor
 {
@@ -23,6 +24,10 @@ private:
     Cliff cliff;
 
     void spawnCliff(float dt);
+    
+    Obstacle obstacle;
+    
+    void spawnObstacle(float dt);
 };
 
 #endif // __GAME_SCENE_H__
