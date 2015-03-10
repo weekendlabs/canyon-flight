@@ -29,13 +29,25 @@ bool GameScene::init()
     
     this->schedule(schedule_selector(GameScene::spawnCliff), 0.40);
 
-    this->schedule(schedule_selector(GameScene::spawnObstacle), 2.5);
+   // this->schedule(schedule_selector(GameScene::spawnObstacle), 2.5);
     
     return true;
 }
 
 void GameScene::spawnCliff(float dt){
-	cliff.spawnCliff(this);
+	if(counter == 10){
+		counter = 0;
+		random = cocos2d::random(10,100);
+	}
+	else{
+		CCLOG("else part counter:%d, random:%d",counter,random);
+		++counter;
+		if(random % 2 == 0)
+			cliff.spawnCliff1(this);
+		else
+			cliff.spawnCliff2(this);
+	}
+
 }
 
 void GameScene::spawnObstacle(float dt) {

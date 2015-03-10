@@ -8,8 +8,10 @@ class Cliff
 public:
     Cliff();
     
-    void spawnCliff(cocos2d::Layer * layer);
+    void spawnCliff1(cocos2d::Layer * layer);
     
+    void spawnCliff2(cocos2d::Layer * layer);
+
 private:
     cocos2d::Size visibleSize;
     cocos2d::Vec2 origin;

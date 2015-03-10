@@ -4,53 +4,59 @@
 USING_NS_CC;
 
 Cliff::Cliff() {
-    visibleSize = Director::getInstance( )->getVisibleSize( );
-    origin = Director::getInstance( )->getVisibleOrigin( );
+	visibleSize = Director::getInstance()->getVisibleSize();
+	origin = Director::getInstance()->getVisibleOrigin();
 }
 
-void Cliff::spawnCliff(cocos2d::Layer * layer) {
-    // @TODO: Create a texture out of cliff.png
-    double targetWidth = cocos2d::random(SCALE_640_WIDTH(75, visibleSize.width), SCALE_640_WIDTH(125, visibleSize.width));
-    
-    // ------- Left Cliff -------
-    Sprite* leftCliff = Sprite::create("cliff.png");
-    
-    leftCliff->setScaleX( targetWidth / leftCliff->getContentSize().width);
-    leftCliff->setPosition(Point(origin.x + targetWidth * 0.5, visibleSize.height + leftCliff->getContentSize().height));
+void Cliff::spawnCliff1(cocos2d::Layer * layer) {
+	float random = cocos2d::random(0.25, 0.45);
 
-    layer->addChild(leftCliff, 1);
-    
-    // ------- Left Cliff Shadow -------
-    Sprite* leftCliffShadow = Sprite::create("cliff.png");
-    
-    leftCliffShadow->setColor(Color3B::BLACK);
-    leftCliffShadow->setScaleX(targetWidth / leftCliffShadow->getContentSize().width);
-    leftCliffShadow->setPosition(Point(origin.x + SCALE_640_WIDTH(5, visibleSize.width) + targetWidth * 0.5, visibleSize.height + leftCliffShadow->getContentSize().height - SCALE_960_HEIGHT(15, visibleSize.height)));
-    
-    layer->addChild(leftCliffShadow, 0);
-    
-    // ------- Right Cliff -------
-    Sprite* rightCliff = Sprite::create("cliff.png");
-    
-    rightCliff->setScaleX( targetWidth / rightCliff->getContentSize().width);
-    rightCliff->setPosition(Point(visibleSize.width - targetWidth * 0.5, visibleSize.height + rightCliff->getContentSize().height));
-    
-    layer->addChild(rightCliff, 1);
-    
-    // ------- Right Cliff Shadow -------
-    Sprite* rightCliffShadow = Sprite::create("cliff.png");
-    
-    rightCliffShadow->setColor(Color3B::BLACK);
-    rightCliffShadow->setScaleX(targetWidth / rightCliffShadow->getContentSize().width);
-    rightCliffShadow->setPosition(Point(visibleSize.width + SCALE_640_WIDTH(-5, visibleSize.width) - targetWidth * 0.5, visibleSize.height + rightCliffShadow->getContentSize().height - SCALE_960_HEIGHT(15, visibleSize.height)));
-    
-    layer->addChild(rightCliffShadow, 0);
-    
-    // ------ Moving the cliffs and shadows to the bottom ------
-    MoveBy* moveBy = MoveBy::create(10, Vec2(0, -visibleSize.height * 1.2));
+	Sprite* leftCliff = Sprite::create("cliff1.png");
+	float leftCliffPosition = (visibleSize.width * random)
+			+ leftCliff->getContentSize().width * -0.5;
+	CCLOG("spawncliff1::random value:%f and its position:%f", random,
+			leftCliffPosition);
+	leftCliff->setPosition(
+			Vec2(leftCliffPosition,
+					visibleSize.height + leftCliff->getContentSize().height));
+	layer->addChild(leftCliff);
 
-    leftCliff->runAction(moveBy);
-    leftCliffShadow->runAction(moveBy->clone());
-    rightCliff->runAction(moveBy->clone());
-    rightCliffShadow->runAction(moveBy->clone());
+	Sprite* rightCliff = Sprite::create("cliff1.png");
+	rightCliff->setPosition(
+			Vec2(leftCliffPosition + (0.45 * visibleSize.width) + rightCliff->getContentSize().width,
+					leftCliff->getPositionY()));
+	layer->addChild(rightCliff);
+
+	// ------ Moving the cliffs and shadows to the bottom ------
+	MoveBy* moveBy = MoveBy::create(10, Vec2(0, -visibleSize.height * 1.2));
+
+	leftCliff->runAction(moveBy);
+	rightCliff->runAction(moveBy->clone());
 }
+
+void Cliff::spawnCliff2(cocos2d::Layer * layer) {
+	Sprite* leftCliff = Sprite::create("cliff1.png");
+	float random = cocos2d::random(0.45, 0.65);
+
+	float leftCliffPosition = (visibleSize.width * random)
+			+ leftCliff->getContentSize().width * -0.5;
+	CCLOG("spawncliff2::random value:%f and its position:%f", random,
+			leftCliffPosition);
+	leftCliff->setPosition(
+			Vec2(leftCliffPosition,
+					visibleSize.height + leftCliff->getContentSize().height));
+	layer->addChild(leftCliff);
+
+	Sprite* rightCliff = Sprite::create("cliff1.png");
+	rightCliff->setPosition(
+			Vec2(leftCliffPosition + (0.45 * visibleSize.width) + rightCliff->getContentSize().width,
+					leftCliff->getPositionY()));
+	layer->addChild(rightCliff);
+
+	// ------ Moving the cliffs and shadows to the bottom ------
+	MoveBy* moveBy = MoveBy::create(10, Vec2(0, -visibleSize.height * 1.2));
+
+	leftCliff->runAction(moveBy);
+	rightCliff->runAction(moveBy->clone());
+}
+

@@ -28,6 +28,10 @@ private:
     Obstacle obstacle;
     
     void spawnObstacle(float dt);
+
+    int counter = 0;
+
+    int random = 0;
 };
 
 #endif // __GAME_SCENE_H__

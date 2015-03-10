@@ -45,8 +45,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
     if (640 == frame.width || 640 == frame.height) {
         glview->setDesignResolutionSize(640, 960, ResolutionPolicy::NO_BORDER);
-    } else if (583 == frame.width || 583 == frame.width) {
-        glview->setDesignResolutionSize(583, 960, ResolutionPolicy::NO_BORDER);
+    } else if (540 == frame.width || 540 == frame.width) {
+        glview->setDesignResolutionSize(540, 960, ResolutionPolicy::NO_BORDER);
     }
 
 
