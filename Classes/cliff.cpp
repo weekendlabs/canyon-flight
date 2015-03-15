@@ -28,13 +28,11 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     // -1.0 <= x <= +1.0 ---> gapWidth <= targetX <= (visibleWidth - gapWidth)
     double targetX = ((sineValue - -1.0) / (1.0 - -1.0)) * (visibleSize.width - gapWidth) + gapWidth;
     
-    CCLOG("Counter value: %.2f", counter);
-    CCLOG("Sine Value: %.2f", sineValue);
-    CCLOG("Target X  : %.2f", targetX);
+//    CCLOG("Counter value: %.2f", counter);
+//    CCLOG("Sine Value: %.2f", sineValue);
+//    CCLOG("Target X  : %.2f", targetX);
     
     // @TODO: Create a texture out of cliff.png
-    
-
 
     // ------- Left Cliff -------
     double leftCliffWidth = targetX - gapWidth;
@@ -53,8 +51,6 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     leftCliff->setPhysicsBody(leftCliffBody);
     layer->addChild(leftCliff, 1);
 
-
-
     // ------- Right Cliff -------
     double rightCliffWidth = visibleSize.width - (gapWidth + leftCliffWidth); // Whatever is the remaining space
     Sprite* rightCliff = Sprite::create("cliff.png");
@@ -70,12 +66,9 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     rightCliffBody->setContactTestBitmask(true);
     rightCliff->setPhysicsBody(rightCliffBody);
     layer->addChild(rightCliff, 1);
-    
 
     // ------ Moving the cliffs and shadows to the bottom ------
     MoveBy* moveBy = MoveBy::create(10, Vec2(0, -visibleSize.height * 1.2));
-
-
 
     leftCliff->runAction(moveBy);
     rightCliff->runAction(moveBy->clone());

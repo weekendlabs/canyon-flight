@@ -3,7 +3,6 @@
 
 #include "cocos2d.h"
 #include "cliff.h"
-#include "obstacle.h"
 
 class GameScene : public cocos2d::LayerColor
 {
@@ -23,7 +22,7 @@ public:
 private:
     Cliff cliff;
 
-    cocos2d::DrawNode* obstacle;
+    cocos2d::Sprite* circle;
 
     cocos2d::Size visibleSize;
 

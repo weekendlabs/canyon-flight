@@ -13,6 +13,6 @@
 #define SCALE_960_HEIGHT(y, height) (((y) / 960.0f) * height)
 
 #define CLIFF_COLLISION_MASK 0x000001
-#define BALL_COLLISION_MASK 0x000002
+#define CIRCLE_COLLISION_MASK 0x000002
 
 #endif
