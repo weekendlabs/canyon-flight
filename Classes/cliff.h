@@ -13,6 +13,8 @@ public:
 private:
     cocos2d::Size visibleSize;
     cocos2d::Vec2 origin;
+    
+    double counter = 0;
 };
 
 #endif /* defined(__canyon_flight__cliff__) */
