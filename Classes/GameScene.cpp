@@ -30,6 +30,16 @@ bool GameScene::init()
     visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
+    PhysicsBody* edgeBody = PhysicsBody::createEdgeBox(visibleSize,
+      			PHYSICSBODY_MATERIAL_DEFAULT, 3);
+    edgeBody->setCollisionBitmask(CLIFF_COLLISION_MASK);
+    edgeBody->setContactTestBitmask(true);
+    Node* edgeNode = Node::create();
+    edgeNode->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    edgeNode->setPhysicsBody(edgeBody);
+
+    this->addChild(edgeNode);
+
     this->schedule(schedule_selector(GameScene::spawnCliff), 0.50);
 
     double circleRadius = (visibleSize.width * 0.05) / 2;
