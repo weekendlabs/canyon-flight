@@ -6,6 +6,12 @@ USING_NS_CC;
 Cliff::Cliff() {
     visibleSize = Director::getInstance( )->getVisibleSize( );
     origin = Director::getInstance( )->getVisibleOrigin( );
+    
+    Image * cliffImage = new Image();
+    cliffImage->initWithImageFile("cliff.png");
+    
+    cliffTexture = new Texture2D();
+    cliffTexture->initWithImage(cliffImage);
 }
 
 void Cliff::spawnCliff(cocos2d::Layer * layer) {
@@ -37,7 +43,7 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     // ------- Left Cliff -------
     double leftCliffWidth = targetX - gapWidth;
 
-    Sprite* leftCliff = Sprite::create("cliff.png");
+    Sprite* leftCliff = Sprite::createWithTexture(cliffTexture);
     
     leftCliff->setScaleX(leftCliffWidth / leftCliff->getContentSize().width);
     leftCliff->setColor(Color3B::BLACK);
@@ -49,11 +55,12 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     leftCliffBody->setCollisionBitmask(CLIFF_COLLISION_MASK);
     leftCliffBody->setContactTestBitmask(true);
     leftCliff->setPhysicsBody(leftCliffBody);
+ 
     layer->addChild(leftCliff, 1);
 
     // ------- Right Cliff -------
     double rightCliffWidth = visibleSize.width - (gapWidth + leftCliffWidth); // Whatever is the remaining space
-    Sprite* rightCliff = Sprite::create("cliff.png");
+    Sprite* rightCliff = Sprite::createWithTexture(cliffTexture);
     
     rightCliff->setScaleX(rightCliffWidth / rightCliff->getContentSize().width);
     rightCliff->setColor(Color3B::BLACK);
@@ -65,11 +72,13 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     rightCliffBody->setCollisionBitmask(CLIFF_COLLISION_MASK);
     rightCliffBody->setContactTestBitmask(true);
     rightCliff->setPhysicsBody(rightCliffBody);
+ 
     layer->addChild(rightCliff, 1);
 
     // ------ Moving the cliffs and shadows to the bottom ------
-    MoveBy* moveBy = MoveBy::create(10, Vec2(0, -visibleSize.height * 1.2));
+    MoveBy* moveBy = MoveBy::create(5 * 0.5, Vec2(0, -visibleSize.height * 1.2));
+    RemoveSelf* remove = RemoveSelf::create();
 
-    leftCliff->runAction(moveBy);
-    rightCliff->runAction(moveBy->clone());
+    leftCliff->runAction(Sequence::create(moveBy, remove, NULL));
+    rightCliff->runAction(Sequence::create(moveBy->clone(), remove->clone(), NULL));
 }

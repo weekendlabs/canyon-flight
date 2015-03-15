@@ -14,6 +14,8 @@ private:
     cocos2d::Size visibleSize;
     cocos2d::Vec2 origin;
     
+    cocos2d::Texture2D * cliffTexture;
+    
     double counter = 0;
 };
 
