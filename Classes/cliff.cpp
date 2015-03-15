@@ -34,6 +34,8 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     
     // @TODO: Create a texture out of cliff.png
     
+
+
     // ------- Left Cliff -------
     double leftCliffWidth = targetX - gapWidth;
 
@@ -43,7 +45,15 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     leftCliff->setColor(Color3B::BLACK);
     leftCliff->setPosition(Point(origin.x + leftCliffWidth * 0.5, visibleSize.height + leftCliff->getContentSize().height));
 
+    //Adding physics body
+    PhysicsBody* leftCliffBody = PhysicsBody::createBox(Size(leftCliffWidth,leftCliff->getContentSize().height));
+    leftCliffBody->setDynamic(false);
+    leftCliffBody->setCollisionBitmask(CLIFF_COLLISION_MASK);
+    leftCliffBody->setContactTestBitmask(true);
+    leftCliff->setPhysicsBody(leftCliffBody);
     layer->addChild(leftCliff, 1);
+
+
 
     // ------- Right Cliff -------
     double rightCliffWidth = visibleSize.width - (gapWidth + leftCliffWidth); // Whatever is the remaining space
@@ -53,10 +63,19 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     rightCliff->setColor(Color3B::BLACK);
     rightCliff->setPosition(Point(visibleSize.width - rightCliffWidth * 0.5, visibleSize.height + rightCliff->getContentSize().height));
     
+    //Adding physics body
+    PhysicsBody* rightCliffBody = PhysicsBody::createBox(Size(rightCliffWidth,rightCliff->getContentSize().height));
+    rightCliffBody->setDynamic(false);
+    rightCliffBody->setCollisionBitmask(CLIFF_COLLISION_MASK);
+    rightCliffBody->setContactTestBitmask(true);
+    rightCliff->setPhysicsBody(rightCliffBody);
     layer->addChild(rightCliff, 1);
     
+
     // ------ Moving the cliffs and shadows to the bottom ------
     MoveBy* moveBy = MoveBy::create(10, Vec2(0, -visibleSize.height * 1.2));
+
+
 
     leftCliff->runAction(moveBy);
     rightCliff->runAction(moveBy->clone());

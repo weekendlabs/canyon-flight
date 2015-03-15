@@ -23,11 +23,15 @@ public:
 private:
     Cliff cliff;
 
+    cocos2d::DrawNode* obstacle;
+
+    cocos2d::Size visibleSize;
+
     void spawnCliff(float dt);
-    
-    Obstacle obstacle;
-    
-    void spawnObstacle(float dt);
+
+    void onAcceleration(cocos2d::Acceleration* acc, cocos2d::Event* event);
+
+    bool onContactBegin(cocos2d::PhysicsContact &contact);
 };
 
 #endif // __GAME_SCENE_H__
