@@ -1,6 +1,7 @@
 #include "GameScene.h"
 #include "definitions.h"
 #include "MainMenuScene.h"
+#include "RevMob.h"
 
 USING_NS_CC;
 
@@ -73,6 +74,9 @@ bool GameScene::init()
     scoreLabel->setPosition(Vec2(visibleSize.width * 0.5 + origin.x, visibleSize.height * 0.75 + origin.y));
 
     this->addChild(scoreLabel,100000);
+    
+    revmob::RevMob * revmob = revmob::RevMob::SharedInstance();
+    revmob->ShowBanner();
 
     return true;
 }
