@@ -90,11 +90,6 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
 
 	if ((CLIFF_COLLISION_MASK == a->getCollisionBitmask() && CIRCLE_COLLISION_MASK == b->getCollisionBitmask()) ||
         (CIRCLE_COLLISION_MASK == a->getCollisionBitmask() && CLIFF_COLLISION_MASK == b->getCollisionBitmask())) {
-		//creation of game over label
-//		LabelTTF* gameOverLabel = LabelTTF::create("Game Over", "Marker Felt.ttf", visibleSize.height * 0.15);
-//        gameOverLabel->setColor(Color3B::BLACK);
-//		gameOverLabel->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
-//		this->addChild(gameOverLabel, 1000);
 	}
 
 	return true;

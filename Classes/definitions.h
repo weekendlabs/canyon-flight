@@ -15,4 +15,6 @@
 #define CLIFF_COLLISION_MASK 0x000001
 #define CIRCLE_COLLISION_MASK 0x000002
 
+#define TTF_FONT_FILE "zorque.ttf"
+
 #endif
