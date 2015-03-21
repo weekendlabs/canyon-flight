@@ -19,6 +19,10 @@ private:
     cocos2d::Size visibleSize;
     
     void GotoGameScene(cocos2d::Ref * sender);
+
+    void onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event);
+
+
 };
 
 #endif // __GAME_SCENE_H__

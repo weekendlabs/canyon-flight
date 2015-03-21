@@ -2,7 +2,9 @@
 #include "GameScene.h"
 #include "definitions.h"
 #include "AdmobHelper.h"
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "iOSHelper.h"
+#endif
 
 USING_NS_CC;
 
@@ -111,8 +113,24 @@ bool MainMenuScene::init()
     iOSHelper::hideAdmobBanner();
 #endif
     
+    this->setKeypadEnabled(true);
+    this->setKeyboardEnabled(true);
+    EventListenerKeyboard *keyboardEventListener = EventListenerKeyboard::create();
+    keyboardEventListener->setEnabled(true);
+    keyboardEventListener->onKeyReleased = CC_CALLBACK_2(MainMenuScene::onKeyReleased,this);
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(keyboardEventListener,this);
+
     return true;
 }
+
+void MainMenuScene::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event){
+	if(keyCode == EventKeyboard::KeyCode::KEY_ESCAPE || keyCode == EventKeyboard::KeyCode::KEY_BACK){
+		CCLOG("You pressed back button");
+		Director::getInstance()->end();
+		exit(0);
+	}
+}
+
 
 void MainMenuScene::GotoGameScene(cocos2d::Ref * sender) {
     auto scene = GameScene::createScene();
