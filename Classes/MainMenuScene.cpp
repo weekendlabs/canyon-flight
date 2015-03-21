@@ -1,6 +1,8 @@
 #include "MainMenuScene.h"
 #include "GameScene.h"
 #include "definitions.h"
+#include "AdmobHelper.h"
+#include "iOSHelper.h"
 
 USING_NS_CC;
 
@@ -101,6 +103,13 @@ bool MainMenuScene::init()
         scoreCountLabel->setPosition(Vec2(visibleSize.width * 0.75, visibleSize.height * (1.0 / 4.0)));
         this->addChild(scoreCountLabel);
     }
+    
+    //------ admob ads -------
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    AdmobHelper::hideAd();
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    iOSHelper::hideAdmobBanner();
+#endif
     
     return true;
 }

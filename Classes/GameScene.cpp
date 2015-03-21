@@ -2,6 +2,7 @@
 #include "definitions.h"
 #include "MainMenuScene.h"
 #include "AdmobHelper.h"
+#include "iOSHelper.h"
 
 USING_NS_CC;
 
@@ -76,15 +77,15 @@ bool GameScene::init()
     
     scheduleUpdate();
     
-    //admob ads
+    //------ admob ads -------
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     AdmobHelper::showAd();
-
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    iOSHelper::showAdmobBanner();
+#endif
 
     return true;
 }
-
-
-
 
 void GameScene::spawnCliff() {
     if (deltaAccum >= cliffSpawnRate) {

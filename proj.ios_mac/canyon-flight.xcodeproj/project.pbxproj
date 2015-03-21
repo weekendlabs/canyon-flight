@@ -22,6 +22,20 @@
 		470C3C761AAC19A6002019DC /* iphonehd in Resources */ = {isa = PBXBuildFile; fileRef = 470C3C741AAC19A6002019DC /* iphonehd */; };
 		47137C751AADF1840056CFA5 /* obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47137C731AADF1840056CFA5 /* obstacle.cpp */; };
 		47137C761AADF1840056CFA5 /* obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47137C731AADF1840056CFA5 /* obstacle.cpp */; };
+		4726B5EA1ABDD9FA00C90B4B /* AdmobHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4726B5E81ABDD9FA00C90B4B /* AdmobHelper.cpp */; };
+		4726B5EB1ABDD9FA00C90B4B /* AdmobHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4726B5E81ABDD9FA00C90B4B /* AdmobHelper.cpp */; };
+		4726B5ED1ABDDB0400C90B4B /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4726B5EC1ABDDB0400C90B4B /* BannerViewController.m */; };
+		4726B5EE1ABDDB0400C90B4B /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4726B5EC1ABDDB0400C90B4B /* BannerViewController.m */; };
+		4726B5F11ABDDB7D00C90B4B /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4726B5F01ABDDB7D00C90B4B /* GoogleMobileAds.framework */; };
+		4726B5F21ABDDBB500C90B4B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47290F9B1ABD753B00AFD981 /* SystemConfiguration.framework */; };
+		4726B5F31ABDDBBB00C90B4B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47290F9D1ABD754300AFD981 /* StoreKit.framework */; };
+		4726B5F41ABDDBCC00C90B4B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47290FA11ABD755D00AFD981 /* AdSupport.framework */; };
+		4726B5F61ABDDC5500C90B4B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4726B5F51ABDDC5500C90B4B /* CoreTelephony.framework */; };
+		4726B5F81ABDDC5B00C90B4B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4726B5F71ABDDC5B00C90B4B /* MessageUI.framework */; };
+		4726B5FB1ABDDCA300C90B4B /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4726B5F91ABDDCA300C90B4B /* EventKit.framework */; };
+		4726B5FC1ABDDCA300C90B4B /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4726B5FA1ABDDCA300C90B4B /* EventKitUI.framework */; };
+		4726B5FF1ABDDE5E00C90B4B /* iOSHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4726B5FD1ABDDE5E00C90B4B /* iOSHelper.mm */; };
+		4726B6001ABDDE5E00C90B4B /* iOSHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4726B5FD1ABDDE5E00C90B4B /* iOSHelper.mm */; };
 		47290F881ABD460E00AFD981 /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47290F861ABD460E00AFD981 /* MainMenuScene.cpp */; };
 		47290F891ABD460E00AFD981 /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47290F861ABD460E00AFD981 /* MainMenuScene.cpp */; };
 		47290F8B1ABD471200AFD981 /* zorque.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47290F8A1ABD471200AFD981 /* zorque.ttf */; };
@@ -116,6 +130,17 @@
 		47137C731AADF1840056CFA5 /* obstacle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = obstacle.cpp; sourceTree = "<group>"; };
 		47137C741AADF1840056CFA5 /* obstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = obstacle.h; sourceTree = "<group>"; };
 		47137C771AADF1E20056CFA5 /* definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = definitions.h; sourceTree = "<group>"; };
+		4726B5E81ABDD9FA00C90B4B /* AdmobHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdmobHelper.cpp; sourceTree = "<group>"; };
+		4726B5E91ABDD9FA00C90B4B /* AdmobHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdmobHelper.h; sourceTree = "<group>"; };
+		4726B5EC1ABDDB0400C90B4B /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
+		4726B5EF1ABDDB1500C90B4B /* BannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
+		4726B5F01ABDDB7D00C90B4B /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = ../Classes/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		4726B5F51ABDDC5500C90B4B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
+		4726B5F71ABDDC5B00C90B4B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
+		4726B5F91ABDDCA300C90B4B /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
+		4726B5FA1ABDDCA300C90B4B /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/EventKitUI.framework; sourceTree = DEVELOPER_DIR; };
+		4726B5FD1ABDDE5E00C90B4B /* iOSHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = iOSHelper.mm; path = ios/iOSHelper.mm; sourceTree = SOURCE_ROOT; };
+		4726B5FE1ABDDE5E00C90B4B /* iOSHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOSHelper.h; path = ios/iOSHelper.h; sourceTree = SOURCE_ROOT; };
 		47290F861ABD460E00AFD981 /* MainMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuScene.cpp; sourceTree = "<group>"; };
 		47290F871ABD460E00AFD981 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		47290F8A1ABD471200AFD981 /* zorque.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = zorque.ttf; sourceTree = "<group>"; };
@@ -172,6 +197,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4726B5FB1ABDDCA300C90B4B /* EventKit.framework in Frameworks */,
+				4726B5FC1ABDDCA300C90B4B /* EventKitUI.framework in Frameworks */,
+				4726B5F81ABDDC5B00C90B4B /* MessageUI.framework in Frameworks */,
+				4726B5F61ABDDC5500C90B4B /* CoreTelephony.framework in Frameworks */,
+				4726B5F41ABDDBCC00C90B4B /* AdSupport.framework in Frameworks */,
+				4726B5F31ABDDBBB00C90B4B /* StoreKit.framework in Frameworks */,
+				4726B5F21ABDDBB500C90B4B /* SystemConfiguration.framework in Frameworks */,
+				4726B5F11ABDDB7D00C90B4B /* GoogleMobileAds.framework in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
@@ -217,6 +250,8 @@
 				503AE0FD17EB989F00D1A890 /* Prefix.pch */,
 				503AE0FE17EB989F00D1A890 /* RootViewController.h */,
 				503AE0FF17EB989F00D1A890 /* RootViewController.mm */,
+				4726B5FD1ABDDE5E00C90B4B /* iOSHelper.mm */,
+				4726B5FE1ABDDE5E00C90B4B /* iOSHelper.h */,
 			);
 			name = ios;
 			path = Classes;
@@ -257,6 +292,11 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4726B5F91ABDDCA300C90B4B /* EventKit.framework */,
+				4726B5FA1ABDDCA300C90B4B /* EventKitUI.framework */,
+				4726B5F71ABDDC5B00C90B4B /* MessageUI.framework */,
+				4726B5F51ABDDC5500C90B4B /* CoreTelephony.framework */,
+				4726B5F01ABDDB7D00C90B4B /* GoogleMobileAds.framework */,
 				47290FA11ABD755D00AFD981 /* AdSupport.framework */,
 				47290F9F1ABD755400AFD981 /* MediaPlayer.framework */,
 				47290F9D1ABD754300AFD981 /* StoreKit.framework */,
@@ -294,6 +334,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4726B5E81ABDD9FA00C90B4B /* AdmobHelper.cpp */,
+				4726B5E91ABDD9FA00C90B4B /* AdmobHelper.h */,
 				47290F861ABD460E00AFD981 /* MainMenuScene.cpp */,
 				47290F871ABD460E00AFD981 /* MainMenuScene.h */,
 				46880B8619C43A87006E1F66 /* GameScene.cpp */,
@@ -305,6 +347,8 @@
 				47137C731AADF1840056CFA5 /* obstacle.cpp */,
 				47137C741AADF1840056CFA5 /* obstacle.h */,
 				47137C771AADF1E20056CFA5 /* definitions.h */,
+				4726B5EC1ABDDB0400C90B4B /* BannerViewController.m */,
+				4726B5EF1ABDDB1500C90B4B /* BannerViewController.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -501,6 +545,9 @@
 				470C3C711AAC1551002019DC /* cliff.cpp in Sources */,
 				47290F881ABD460E00AFD981 /* MainMenuScene.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				4726B5ED1ABDDB0400C90B4B /* BannerViewController.m in Sources */,
+				4726B5EA1ABDD9FA00C90B4B /* AdmobHelper.cpp in Sources */,
+				4726B5FF1ABDDE5E00C90B4B /* iOSHelper.mm in Sources */,
 				46880B8A19C43A87006E1F66 /* GameScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
@@ -512,12 +559,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4726B6001ABDDE5E00C90B4B /* iOSHelper.mm in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				47137C761AADF1840056CFA5 /* obstacle.cpp in Sources */,
 				470C3C721AAC1551002019DC /* cliff.cpp in Sources */,
 				47290F891ABD460E00AFD981 /* MainMenuScene.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* GameScene.cpp in Sources */,
+				4726B5EE1ABDDB0400C90B4B /* BannerViewController.m in Sources */,
+				4726B5EB1ABDD9FA00C90B4B /* AdmobHelper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +593,10 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/santhos/personal/weekendlabs/canyon-flight/Classes",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -583,6 +637,10 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/santhos/personal/weekendlabs/canyon-flight/Classes",
+				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
