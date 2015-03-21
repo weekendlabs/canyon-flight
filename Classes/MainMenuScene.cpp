@@ -1,7 +1,6 @@
 #include "MainMenuScene.h"
 #include "GameScene.h"
 #include "definitions.h"
-#include "RevMob.h"
 
 USING_NS_CC;
 
@@ -85,9 +84,6 @@ bool MainMenuScene::init()
     
     // If scored is at least 0 then display
     if (~score) {
-        revmob::RevMob * revmob = revmob::RevMob::SharedInstance();
-        revmob->ShowFullscreen();
-        
         std::string scoreString;
 
         highScoreLabel->setPosition(Vec2(visibleSize.width * 0.25, visibleSize.height * (1.25 / 4.0)));

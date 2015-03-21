@@ -1,8 +1,6 @@
 #include "AppDelegate.h"
 #include "MainMenuScene.h"
 
-#include "RevMob.h"
-
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {
@@ -24,16 +22,7 @@ void AppDelegate::initGLContextAttrs()
     GLView::setGLContextAttrs(glContextAttrs);
 }
 
-bool AppDelegate::applicationDidFinishLaunching() {
-    revmob::RevMob * revmob = revmob::RevMob::SharedInstance();
-    
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    revmob->StartSession("550d39988bedc55e2aca1e94");
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    revmob->StartSession();
-#endif
-    CCLOG("Rev mob session started");
-    
+bool AppDelegate::applicationDidFinishLaunching() {    
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();

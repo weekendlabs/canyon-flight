@@ -1,7 +1,6 @@
 #include "GameScene.h"
 #include "definitions.h"
 #include "MainMenuScene.h"
-#include "RevMob.h"
 
 USING_NS_CC;
 
