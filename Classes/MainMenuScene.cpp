@@ -4,8 +4,12 @@
 
 USING_NS_CC;
 
-Scene* MainMenuScene::createScene()
+int score;
+
+Scene* MainMenuScene::createScene(int scored)
 {
+    score = scored;
+    
     // 'scene' is an autorelease object
 	auto scene = Scene::create();
     
@@ -63,14 +67,14 @@ bool MainMenuScene::init()
     this->addChild(highScoreCountLabel);
     
     // If scored is at least 0 then display
-    if (~scored) {
+    if (~score) {
         std::string scoreString;
 
         highScoreLabel->setPosition(Vec2(visibleSize.width * 0.25, visibleSize.height * (1.25 / 4.0)));
         highScoreCountLabel->setPosition(Vec2(visibleSize.width * 0.25, visibleSize.height * (1.0 / 4.0)));
         
         char buff[10];
-        sprintf(buff, "%d", scored);
+        sprintf(buff, "%d", score);
         scoreString = buff;
         
         Label * scoreLabel = Label::createWithTTF("Last", TTF_FONT_FILE, SCALE_960_HEIGHT(30, visibleSize.height));

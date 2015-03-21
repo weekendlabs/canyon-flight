@@ -1,5 +1,6 @@
 #include "GameScene.h"
 #include "definitions.h"
+#include "MainMenuScene.h"
 
 USING_NS_CC;
 
@@ -63,11 +64,24 @@ bool GameScene::init()
     EventListenerAcceleration* listener = EventListenerAcceleration::create(CC_CALLBACK_2(GameScene::onAcceleration,this));
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener,this);
     
+    //adding score label
+    __String *tempScore = __String::createWithFormat("%i",score);
+    //std::string tempScore = score + "";
+    scoreLabel = Label::createWithTTF(tempScore->getCString(), TTF_FONT_FILE, visibleSize.height * SCORE_LABEL_SCALE);
+    scoreLabel->setColor(Color3B::WHITE);
+    scoreLabel->enableOutline(Color4B::BLACK,10);
+    scoreLabel->setPosition(Vec2(visibleSize.width * 0.5 + origin.x, visibleSize.height * 0.75 + origin.y));
+
+    this->addChild(scoreLabel,100000);
+
     return true;
 }
 
 void GameScene::spawnCliff(float dt){
 	cliff.spawnCliff(this);
+	score = score + 1;
+	 __String *tempScore = __String::createWithFormat("%i", score);
+	scoreLabel->setString(tempScore->getCString());
 }
 
 
@@ -90,6 +104,9 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
 
 	if ((CLIFF_COLLISION_MASK == a->getCollisionBitmask() && CIRCLE_COLLISION_MASK == b->getCollisionBitmask()) ||
         (CIRCLE_COLLISION_MASK == a->getCollisionBitmask() && CLIFF_COLLISION_MASK == b->getCollisionBitmask())) {
+        auto * scene = MainMenuScene::createScene(score);
+        
+        Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
 	}
 
 	return true;

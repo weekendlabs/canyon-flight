@@ -31,6 +31,10 @@ private:
     void onAcceleration(cocos2d::Acceleration* acc, cocos2d::Event* event);
 
     bool onContactBegin(cocos2d::PhysicsContact &contact);
+
+    int score = 0;
+
+    cocos2d::Label* scoreLabel;
 };
 
 #endif // __GAME_SCENE_H__
