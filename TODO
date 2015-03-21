@@ -1,12 +1,12 @@
-- Score label
+- Score label (1000)
   - global counter
-- Accelerometer in update loop (trial)
-- Main menu screen
-- Game over screen
-  - High score
-- Ad integration    
-  - Revmob android
-  - Revmob iOS
+- Accelerometer in update loop (trial) (2000)
+- Main menu screen (1001)
+- Game over screen (1002)
+  - High score 
+- Ad integration (1003)
+  - Revmob android (1003a)
+  - Revmob iOS (1003b)
 - App icon
 - Launch/Splash screen
 - WeekendLabs account -> iOS (99USD) / Android (25USD) 
