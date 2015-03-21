@@ -40,6 +40,9 @@ private:
     cocos2d::Vec2 circleVelocity = cocos2d::Vec2(0, 0);
     float deltaAccum;
     void update(float delta);
+
+
+
 };
 
 #endif // __GAME_SCENE_H__

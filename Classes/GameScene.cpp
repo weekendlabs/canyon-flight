@@ -1,6 +1,7 @@
 #include "GameScene.h"
 #include "definitions.h"
 #include "MainMenuScene.h"
+#include "AdmobHelper.h"
 
 USING_NS_CC;
 
@@ -75,8 +76,15 @@ bool GameScene::init()
     
     scheduleUpdate();
     
+    //admob ads
+    AdmobHelper::showAd();
+
+
     return true;
 }
+
+
+
 
 void GameScene::spawnCliff() {
     if (deltaAccum >= cliffSpawnRate) {
