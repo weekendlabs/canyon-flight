@@ -62,7 +62,23 @@ bool MainMenuScene::init()
     highScoreLabel->setPosition(Vec2(visibleSize.width * 0.5, visibleSize.height * (1.25 / 4.0)));
     this->addChild(highScoreLabel);
     
-    Label * highScoreCountLabel = Label::createWithTTF("100", TTF_FONT_FILE, SCALE_960_HEIGHT(50, visibleSize.height));
+
+    UserDefault *def = UserDefault::getInstance();
+    int highscore = def->getIntegerForKey("HIGHSCORE",0);
+
+    if(score > highscore){
+    	highscore = score;
+    	def->setIntegerForKey("HIGHSCORE",highscore);
+    }
+    def->flush();
+
+    std::string highScoreString;
+    char highScoreBuff[100];
+    sprintf(highScoreBuff,"%d",highscore);
+    highScoreString = highScoreBuff;
+
+
+    Label * highScoreCountLabel = Label::createWithTTF(highScoreString, TTF_FONT_FILE, SCALE_960_HEIGHT(50, visibleSize.height));
     highScoreCountLabel->setPosition(Vec2(visibleSize.width * 0.5, visibleSize.height * (1.0 / 4.0)));
     this->addChild(highScoreCountLabel);
     
