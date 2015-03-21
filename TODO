@@ -1,9 +1,4 @@
-- Score label (1000)
-  - global counter
 - Accelerometer in update loop (trial) (2000)
-- Main menu screen (1001)
-- Game over screen (1002)
-  - High score 
 - Ad integration (1003)
   - Revmob android (1003a)
   - Revmob iOS (1003b)
