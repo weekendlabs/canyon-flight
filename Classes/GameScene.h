@@ -26,7 +26,8 @@ private:
 
     cocos2d::Size visibleSize;
 
-    void spawnCliff(float dt);
+    float cliffSpawnRate;
+    void spawnCliff();
 
     void onAcceleration(cocos2d::Acceleration* acc, cocos2d::Event* event);
 
@@ -36,6 +37,8 @@ private:
 
     cocos2d::Label* scoreLabel;
     
+    cocos2d::Vec2 circleVelocity = cocos2d::Vec2(0, 0);
+    float deltaAccum;
     void update(float delta);
 };
 

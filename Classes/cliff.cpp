@@ -6,16 +6,9 @@ USING_NS_CC;
 Cliff::Cliff() {
     visibleSize = Director::getInstance( )->getVisibleSize( );
     origin = Director::getInstance( )->getVisibleOrigin( );
-    
-    Image * cliffImage = new Image();
-    cliffImage->initWithImageFile("cliff.png");
-    
-    cliffTexture = new Texture2D();
-    cliffTexture->initWithImage(cliffImage);
 }
 
 void Cliff::spawnCliff(cocos2d::Layer * layer) {
-//    double counterInc = cocos2d::random(SCALE_640_WIDTH(0.075, visibleSize.width), SCALE_640_WIDTH(0.15, visibleSize.width));
     counter += SCALE_960_HEIGHT(0.075, visibleSize.height);
     double sineValue = sin(counter);
     counter += sin(counter * 0.01);
@@ -24,26 +17,18 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     // |-Left Cliff-|-Gap-|-Right Cliff-| = visibleWidth
     
     // visibleWidth * 0.25 <= gapWidth <= visibleWidth * 0.5
-    const double MAX_GAP_WIDTH = SCALE_640_WIDTH(visibleSize.width * 0.5, visibleSize.width);
-    const double MIN_GAP_WIDTH = SCALE_640_WIDTH(visibleSize.width * 0.25, visibleSize.width);
-//    double gapWidth = ((sineValue - -1.0) / (1.0 - -1.0)) * (MAX_GAP_WIDTH - MIN_GAP_WIDTH) + MIN_GAP_WIDTH;
+    const double MAX_GAP_WIDTH = SCALE_640_WIDTH(visibleSize.width * 0.55, visibleSize.width);
     double gapWidth = MAX_GAP_WIDTH;
     
     // ((Input - InputLow) / (InputHigh - InputLow)) * (OutputHigh - OutputLow) + OutputLow;
     // Sine value ranges from -1 to +1 and width ranges from  gapWidth to visibleSize.width - gapWidth
     // -1.0 <= x <= +1.0 ---> gapWidth <= targetX <= (visibleWidth - gapWidth)
     double targetX = ((sineValue - -1.0) / (1.0 - -1.0)) * (visibleSize.width - gapWidth) + gapWidth;
-    
-//    CCLOG("Counter value: %.2f", counter);
-//    CCLOG("Sine Value: %.2f", sineValue);
-//    CCLOG("Target X  : %.2f", targetX);
-    
-    // @TODO: Create a texture out of cliff.png
 
     // ------- Left Cliff -------
     double leftCliffWidth = targetX - gapWidth;
 
-    Sprite* leftCliff = Sprite::createWithTexture(cliffTexture);
+    Sprite* leftCliff = Sprite::create("cliff.png");
     
     leftCliff->setScaleX(leftCliffWidth / leftCliff->getContentSize().width);
     leftCliff->setColor(Color3B::BLACK);
@@ -60,7 +45,7 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
 
     // ------- Right Cliff -------
     double rightCliffWidth = visibleSize.width - (gapWidth + leftCliffWidth); // Whatever is the remaining space
-    Sprite* rightCliff = Sprite::createWithTexture(cliffTexture);
+    Sprite* rightCliff = Sprite::create("cliff.png");
     
     rightCliff->setScaleX(rightCliffWidth / rightCliff->getContentSize().width);
     rightCliff->setColor(Color3B::BLACK);

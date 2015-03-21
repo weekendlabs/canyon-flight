@@ -32,6 +32,8 @@ bool GameScene::init()
     visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
+    cliffSpawnRate = SCALE_960_HEIGHT(0.125, visibleSize.height);
+    
     PhysicsBody* edgeBody = PhysicsBody::createEdgeBox(visibleSize,
       			PHYSICSBODY_MATERIAL_DEFAULT, 3);
     edgeBody->setCollisionBitmask(CLIFF_COLLISION_MASK);
@@ -41,8 +43,6 @@ bool GameScene::init()
     edgeNode->setPhysicsBody(edgeBody);
 
     this->addChild(edgeNode);
-
-    this->schedule(schedule_selector(GameScene::spawnCliff), 0.325 * 0.5);
 
     double circleRadius = (visibleSize.width * 0.05) / 2;
     circle = Sprite::create("circle.png");
@@ -75,22 +75,37 @@ bool GameScene::init()
 
     this->addChild(scoreLabel,100000);
     
-    revmob::RevMob * revmob = revmob::RevMob::SharedInstance();
-    revmob->ShowBanner();
-
+    try {
+        revmob::RevMob * revmob = revmob::RevMob::SharedInstance();
+        revmob->ShowBanner();
+    } catch (std::exception e) {
+        CCLOG("Error in revmob: %s", e.what());
+    }
+    
+    scheduleUpdate();
+    
     return true;
 }
 
-void GameScene::spawnCliff(float dt){
-	cliff.spawnCliff(this);
-	score = score + 1;
-	 __String *tempScore = __String::createWithFormat("%i", score);
-	scoreLabel->setString(tempScore->getCString());
+void GameScene::spawnCliff() {
+    if (deltaAccum >= cliffSpawnRate) {
+        cliff.spawnCliff(this);
+        score = score + 1;
+        __String *tempScore = __String::createWithFormat("%i", score);
+        scoreLabel->setString(tempScore->getCString());
+        
+        deltaAccum = 0;
+    }
 }
 
-
 void GameScene::onAcceleration(cocos2d::Acceleration* acc, cocos2d::Event* event){
-
+    float accelerationXFactor = SCALE_640_WIDTH(7.5, visibleSize.width);
+    
+    if ((circleVelocity.x < 0 && acc->x > 0) || (circleVelocity.x > 0 && acc->x < 0)) {
+        circleVelocity.x = acc->x * accelerationXFactor;
+    } else {
+        circleVelocity.x += acc->x * accelerationXFactor;
+    }
 }
 
 bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
@@ -108,6 +123,12 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
 }
 
 void GameScene::update(float delta) {
+    Vec2 pos = circle->getPosition();
     
+    pos.x += circleVelocity.x * delta;
+    
+    circle->setPosition(pos);
+    
+    deltaAccum += delta;
+    spawnCliff();
 }
-

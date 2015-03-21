@@ -18,4 +18,6 @@
 #define TTF_FONT_FILE "zorque.ttf"
 #define SCORE_LABEL_SCALE 0.1
 
+#define CLIFF_SPAWN_RATE 0.25
+
 #endif
