@@ -9,7 +9,6 @@ Scene* GameScene::createScene()
 {
     // 'scene' is an autorelease object
 	auto scene = Scene::createWithPhysics();
-//	scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 	scene->getPhysicsWorld()->setGravity(Vec2(0, 0));
     
     // 'layer' is an autorelease object
@@ -32,7 +31,7 @@ bool GameScene::init()
     visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
-    cliffSpawnRate = SCALE_960_HEIGHT(0.125, visibleSize.height);
+    cliffSpawnRate = SCALE_960_HEIGHT(0.15, visibleSize.height);
     
     PhysicsBody* edgeBody = PhysicsBody::createEdgeBox(visibleSize,
       			PHYSICSBODY_MATERIAL_DEFAULT, 3);
@@ -55,7 +54,7 @@ bool GameScene::init()
     
     circle->setPhysicsBody(circleBody);
     
-    this->addChild(circle, 1);
+    this->addChild(circle, 10005);
 
     EventListenerPhysicsContact* contactListener = EventListenerPhysicsContact::create();
     contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin,this);
@@ -73,14 +72,7 @@ bool GameScene::init()
     scoreLabel->enableOutline(Color4B::BLACK,10);
     scoreLabel->setPosition(Vec2(visibleSize.width * 0.5 + origin.x, visibleSize.height * 0.75 + origin.y));
 
-    this->addChild(scoreLabel,100000);
-    
-    try {
-        revmob::RevMob * revmob = revmob::RevMob::SharedInstance();
-        revmob->ShowBanner();
-    } catch (std::exception e) {
-        CCLOG("Error in revmob: %s", e.what());
-    }
+    this->addChild(scoreLabel, 1001);
     
     scheduleUpdate();
     

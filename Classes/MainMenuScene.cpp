@@ -85,6 +85,9 @@ bool MainMenuScene::init()
     
     // If scored is at least 0 then display
     if (~score) {
+        revmob::RevMob * revmob = revmob::RevMob::SharedInstance();
+        revmob->ShowFullscreen();
+        
         std::string scoreString;
 
         highScoreLabel->setPosition(Vec2(visibleSize.width * 0.25, visibleSize.height * (1.25 / 4.0)));
@@ -102,9 +105,6 @@ bool MainMenuScene::init()
         scoreCountLabel->setPosition(Vec2(visibleSize.width * 0.75, visibleSize.height * (1.0 / 4.0)));
         this->addChild(scoreCountLabel);
     }
-    
-    revmob::RevMob * revmob = revmob::RevMob::SharedInstance();
-    revmob->HideBanner();
     
     return true;
 }
