@@ -63,11 +63,24 @@ bool GameScene::init()
     EventListenerAcceleration* listener = EventListenerAcceleration::create(CC_CALLBACK_2(GameScene::onAcceleration,this));
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener,this);
     
+    //adding score label
+    __String *tempScore = __String::createWithFormat("%i",score);
+    //std::string tempScore = score + "";
+    scoreLabel = Label::createWithTTF(tempScore->getCString(),"fonts/zorque.ttf", visibleSize.height * SCORE_LABEL_SCALE);
+    scoreLabel->setColor(Color3B::WHITE);
+    scoreLabel->enableOutline(Color4B::BLACK,10);
+    scoreLabel->setPosition(Vec2(visibleSize.width * 0.5 + origin.x, visibleSize.height * 0.75 + origin.y));
+
+    this->addChild(scoreLabel,100000);
+
     return true;
 }
 
 void GameScene::spawnCliff(float dt){
 	cliff.spawnCliff(this);
+	score = score + 1;
+	 __String *tempScore = __String::createWithFormat("%i",score);
+	scoreLabel->setString(tempScore->getCString());
 }
 
 
