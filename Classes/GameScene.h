@@ -35,6 +35,8 @@ private:
     int score = 0;
 
     cocos2d::Label* scoreLabel;
+    
+    void update(float delta);
 };
 
 #endif // __GAME_SCENE_H__

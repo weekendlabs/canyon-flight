@@ -1,27 +1,37 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
+archiveVersion = 1;
+classes = {
+};
+objectVersion = 46;
+objects = {
 
 /* Begin PBXBuildFile section */
-		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
-		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
-		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
-		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
-		46880B8A19C43A87006E1F66 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* GameScene.cpp */; };
-		46880B8B19C43A87006E1F66 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* GameScene.cpp */; };
-		470C3C711AAC1551002019DC /* cliff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 470C3C6F1AAC1551002019DC /* cliff.cpp */; };
-		470C3C721AAC1551002019DC /* cliff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 470C3C6F1AAC1551002019DC /* cliff.cpp */; };
-		470C3C751AAC19A6002019DC /* iphonehd in Resources */ = {isa = PBXBuildFile; fileRef = 470C3C741AAC19A6002019DC /* iphonehd */; };
-		470C3C761AAC19A6002019DC /* iphonehd in Resources */ = {isa = PBXBuildFile; fileRef = 470C3C741AAC19A6002019DC /* iphonehd */; };
-		47137C751AADF1840056CFA5 /* obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47137C731AADF1840056CFA5 /* obstacle.cpp */; };
-		47137C761AADF1840056CFA5 /* obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47137C731AADF1840056CFA5 /* obstacle.cpp */; };
+  1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
+  1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
+  1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+  1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+  288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+  46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
+  46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
+  46880B8A19C43A87006E1F66 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* GameScene.cpp */; };
+  46880B8B19C43A87006E1F66 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* GameScene.cpp */; };
+  470C3C711AAC1551002019DC /* cliff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 470C3C6F1AAC1551002019DC /* cliff.cpp */; };
+  470C3C721AAC1551002019DC /* cliff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 470C3C6F1AAC1551002019DC /* cliff.cpp */; };
+  470C3C751AAC19A6002019DC /* iphonehd in Resources */ = {isa = PBXBuildFile; fileRef = 470C3C741AAC19A6002019DC /* iphonehd */; };
+  470C3C761AAC19A6002019DC /* iphonehd in Resources */ = {isa = PBXBuildFile; fileRef = 470C3C741AAC19A6002019DC /* iphonehd */; };
+  47137C751AADF1840056CFA5 /* obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47137C731AADF1840056CFA5 /* obstacle.cpp */; };
+  47137C761AADF1840056CFA5 /* obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47137C731AADF1840056CFA5 /* obstacle.cpp */; };
+		47290F881ABD460E00AFD981 /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47290F861ABD460E00AFD981 /* MainMenuScene.cpp */; };
+		47290F891ABD460E00AFD981 /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47290F861ABD460E00AFD981 /* MainMenuScene.cpp */; };
+		47290F8B1ABD471200AFD981 /* zorque.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47290F8A1ABD471200AFD981 /* zorque.ttf */; };
+		47290F8C1ABD471200AFD981 /* zorque.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47290F8A1ABD471200AFD981 /* zorque.ttf */; };
+		47290FA61ABD769F00AFD981 /* libRevMobCocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47290FA31ABD769E00AFD981 /* libRevMobCocos2dx.a */; };
+		47290FA71ABD77A300AFD981 /* libRevMobCocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47290FA31ABD769E00AFD981 /* libRevMobCocos2dx.a */; };
+		47290FA81ABD7B8C00AFD981 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47290F9B1ABD753B00AFD981 /* SystemConfiguration.framework */; };
+		47290FA91ABD7B9200AFD981 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47290F9F1ABD755400AFD981 /* MediaPlayer.framework */; };
+		47290FAA1ABD7B9700AFD981 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47290F9D1ABD754300AFD981 /* StoreKit.framework */; };
+		47290FAB1ABD7B9C00AFD981 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47290FA11ABD755D00AFD981 /* AdSupport.framework */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -68,50 +78,59 @@
 		1AC6FAF8180E9839004C840B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1551A33F158F2AB200E66CFE;
-			remoteInfo = "cocos2dx Mac";
-		};
-		1AC6FB06180E9839004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A07A4D641783777C0073F6A7;
-			remoteInfo = "cocos2dx iOS";
-		};
-		1AC6FB15180E9959004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1551A33E158F2AB200E66CFE;
-			remoteInfo = "cocos2dx Mac";
-		};
-		1AC6FB24180E99E1004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A07A4C241783777C0073F6A7;
-			remoteInfo = "cocos2dx iOS";
-		};
+    proxyType = 2;
+    remoteGlobalIDString = 1551A33F158F2AB200E66CFE;
+    remoteInfo = "cocos2dx Mac";
+  };
+  1AC6FB06180E9839004C840B /* PBXContainerItemProxy */ = {
+    isa = PBXContainerItemProxy;
+    containerPortal = 1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */;
+    proxyType = 2;
+    remoteGlobalIDString = A07A4D641783777C0073F6A7;
+    remoteInfo = "cocos2dx iOS";
+  };
+  1AC6FB15180E9959004C840B /* PBXContainerItemProxy */ = {
+    isa = PBXContainerItemProxy;
+    containerPortal = 1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */;
+    proxyType = 1;
+    remoteGlobalIDString = 1551A33E158F2AB200E66CFE;
+    remoteInfo = "cocos2dx Mac";
+  };
+  1AC6FB24180E99E1004C840B /* PBXContainerItemProxy */ = {
+    isa = PBXContainerItemProxy;
+    containerPortal = 1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */;
+    proxyType = 1;
+    remoteGlobalIDString = A07A4C241783777C0073F6A7;
+    remoteInfo = "cocos2dx iOS";
+  };
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
-		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
-		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* canyon-flight iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "canyon-flight iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
-		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		46880B8619C43A87006E1F66 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
-		46880B8719C43A87006E1F66 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		470C3C6F1AAC1551002019DC /* cliff.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cliff.cpp; sourceTree = "<group>"; };
-		470C3C701AAC1551002019DC /* cliff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cliff.h; sourceTree = "<group>"; };
-		470C3C741AAC19A6002019DC /* iphonehd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = iphonehd; sourceTree = "<group>"; };
-		47137C731AADF1840056CFA5 /* obstacle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = obstacle.cpp; sourceTree = "<group>"; };
-		47137C741AADF1840056CFA5 /* obstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = obstacle.h; sourceTree = "<group>"; };
-		47137C771AADF1E20056CFA5 /* definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = definitions.h; sourceTree = "<group>"; };
+  1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
+  1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
+  1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+  1D6058910D05DD3D006BFB54 /* canyon-flight iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "canyon-flight iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+  1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+  288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+  46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
+  46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+  46880B8619C43A87006E1F66 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
+  46880B8719C43A87006E1F66 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+  470C3C6F1AAC1551002019DC /* cliff.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cliff.cpp; sourceTree = "<group>"; };
+  470C3C701AAC1551002019DC /* cliff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cliff.h; sourceTree = "<group>"; };
+  470C3C741AAC19A6002019DC /* iphonehd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = iphonehd; sourceTree = "<group>"; };
+  47137C731AADF1840056CFA5 /* obstacle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = obstacle.cpp; sourceTree = "<group>"; };
+  47137C741AADF1840056CFA5 /* obstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = obstacle.h; sourceTree = "<group>"; };
+  47137C771AADF1E20056CFA5 /* definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = definitions.h; sourceTree = "<group>"; };
+		47290F861ABD460E00AFD981 /* MainMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuScene.cpp; sourceTree = "<group>"; };
+		47290F871ABD460E00AFD981 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
+		47290F8A1ABD471200AFD981 /* zorque.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = zorque.ttf; sourceTree = "<group>"; };
+		47290F9B1ABD753B00AFD981 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		47290F9D1ABD754300AFD981 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		47290F9F1ABD755400AFD981 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		47290FA11ABD755D00AFD981 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		47290FA31ABD769E00AFD981 /* libRevMobCocos2dx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRevMobCocos2dx.a; sourceTree = "<group>"; };
+		47290FA41ABD769E00AFD981 /* RevMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevMob.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -161,6 +180,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47290FAB1ABD7B9C00AFD981 /* AdSupport.framework in Frameworks */,
+				47290FAA1ABD7B9700AFD981 /* StoreKit.framework in Frameworks */,
+				47290FA91ABD7B9200AFD981 /* MediaPlayer.framework in Frameworks */,
+				47290FA81ABD7B8C00AFD981 /* SystemConfiguration.framework in Frameworks */,
+				47290FA71ABD77A300AFD981 /* libRevMobCocos2dx.a in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
@@ -180,12 +204,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47290FA61ABD769F00AFD981 /* libRevMobCocos2dx.a in Frameworks */,
 				1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */,
 				5087E76717EB910900C73F5D /* libz.dylib in Frameworks */,
 				503AE11B17EB9C5A00D1A890 /* IOKit.framework in Frameworks */,
 				5087E78B17EB975400C73F5D /* OpenGL.framework in Frameworks */,
 				5087E78917EB974C00C73F5D /* AppKit.framework in Frameworks */,
 				5087E76317EB910900C73F5D /* Foundation.framework in Frameworks */,
+				47290FB81ABD81DA00AFD981 /* libRevMobCocos2dx.a in Frameworks */,
 				5087E76817EB910900C73F5D /* QuartzCore.framework in Frameworks */,
 				5087E76917EB910900C73F5D /* OpenAL.framework in Frameworks */,
 				5087E76A17EB910900C73F5D /* AVFoundation.framework in Frameworks */,
@@ -246,6 +272,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				47290FA11ABD755D00AFD981 /* AdSupport.framework */,
+				47290F9F1ABD755400AFD981 /* MediaPlayer.framework */,
+				47290F9D1ABD754300AFD981 /* StoreKit.framework */,
+				47290F9B1ABD753B00AFD981 /* SystemConfiguration.framework */,
 				52B47A461A53D09B004E4C60 /* Security.framework */,
 				D6B0611A1803AB670077942B /* CoreMotion.framework */,
 				503AE11A17EB9C5A00D1A890 /* IOKit.framework */,
@@ -269,6 +299,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				47290F8A1ABD471200AFD981 /* zorque.ttf */,
 				470C3C741AAC19A6002019DC /* iphonehd */,
 			);
 			name = Resources;
@@ -278,10 +309,14 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
-				46880B8519C43A87006E1F66 /* AppDelegate.h */,
+				47290FA31ABD769E00AFD981 /* libRevMobCocos2dx.a */,
+				47290FA41ABD769E00AFD981 /* RevMob.h */,
+				47290F861ABD460E00AFD981 /* MainMenuScene.cpp */,
+				47290F871ABD460E00AFD981 /* MainMenuScene.h */,
 				46880B8619C43A87006E1F66 /* GameScene.cpp */,
 				46880B8719C43A87006E1F66 /* GameScene.h */,
+				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
+				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				470C3C6F1AAC1551002019DC /* cliff.cpp */,
 				470C3C701AAC1551002019DC /* cliff.h */,
 				47137C731AADF1840056CFA5 /* obstacle.cpp */,
@@ -447,6 +482,7 @@
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
+				47290F8B1ABD471200AFD981 /* zorque.ttf in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
@@ -465,6 +501,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47290F8C1ABD471200AFD981 /* zorque.ttf in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				470C3C761AAC19A6002019DC /* iphonehd in Resources */,
 			);
@@ -479,6 +516,7 @@
 			files = (
 				47137C751AADF1840056CFA5 /* obstacle.cpp in Sources */,
 				470C3C711AAC1551002019DC /* cliff.cpp in Sources */,
+				47290F881ABD460E00AFD981 /* MainMenuScene.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
@@ -495,6 +533,7 @@
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				47137C761AADF1840056CFA5 /* obstacle.cpp in Sources */,
 				470C3C721AAC1551002019DC /* cliff.cpp in Sources */,
+				47290F891ABD460E00AFD981 /* MainMenuScene.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* GameScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,8 +577,12 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/ios",
+					"$(PROJECT_DIR)",
+					"/Users/santhos/personal/weekendlabs/canyon-flight/Classes",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -572,8 +615,12 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/ios",
+					"$(PROJECT_DIR)",
+					"/Users/santhos/personal/weekendlabs/canyon-flight/Classes",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -609,7 +656,11 @@
 					"$(SRCROOT)/../cocos2d/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/ios",
+					"$(PROJECT_DIR)",
+					"/Users/santhos/personal/weekendlabs/canyon-flight/Classes",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
@@ -640,7 +691,11 @@
 					"$(SRCROOT)/../cocos2d/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/ios",
+					"$(PROJECT_DIR)",
+					"/Users/santhos/personal/weekendlabs/canyon-flight/Classes",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",

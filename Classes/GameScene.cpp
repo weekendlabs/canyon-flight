@@ -90,16 +90,7 @@ void GameScene::spawnCliff(float dt){
 
 
 void GameScene::onAcceleration(cocos2d::Acceleration* acc, cocos2d::Event* event){
-//	circle->setPosition(circle->getPositionX() + acc->x, circle->getPositionY() + acc->y);
-    // This will give us a value in the closure -1.0 <= x <= +1.0
-    
-    // ((Input - InputLow) / (InputHigh - InputLow)) * (OutputHigh - OutputLow) + OutputLow;
-    double moveByX = ((acc->x - -1.0) / (1.0 - -1.0)) * (2.5 - -2.5) + -2.5;
-    double moveByY = ((acc->y - -1.0) / (1.0 - -1.0)) * (2.5 - -2.5) + -2.5;
-    
-//    MoveBy * moveByAction = MoveBy::create(0.01, Vec2(moveByX, 0));
-//    circle->runAction(moveByAction);
-    circle->setPosition(circle->getPositionX() + moveByX, circle->getPositionY() + moveByY);
+
 }
 
 bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
@@ -114,5 +105,9 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
 	}
 
 	return true;
+}
+
+void GameScene::update(float delta) {
+    
 }
 
