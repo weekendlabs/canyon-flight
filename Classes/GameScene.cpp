@@ -2,7 +2,9 @@
 #include "definitions.h"
 #include "MainMenuScene.h"
 #include "AdmobHelper.h"
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "iOSHelper.h"
+#endif
 
 USING_NS_CC;
 
@@ -84,7 +86,23 @@ bool GameScene::init()
     iOSHelper::showAdmobBanner();
 #endif
 
+
+    this->setKeypadEnabled(true);
+	this->setKeyboardEnabled(true);
+	EventListenerKeyboard *keyboardEventListener = EventListenerKeyboard::create();
+	keyboardEventListener->setEnabled(true);
+	keyboardEventListener->onKeyReleased = CC_CALLBACK_2(GameScene::onKeyReleased,this);
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(keyboardEventListener,this);
+
     return true;
+}
+
+void GameScene::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event){
+	if(keyCode == EventKeyboard::KeyCode::KEY_ESCAPE || keyCode == EventKeyboard::KeyCode::KEY_BACK){
+		CCLOG("You pressed back button from game scene");
+		auto * scene = MainMenuScene::createScene();
+		Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
+	}
 }
 
 void GameScene::spawnCliff() {

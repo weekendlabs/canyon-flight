@@ -41,6 +41,7 @@ private:
     float deltaAccum;
     void update(float delta);
 
+    void onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event);
 
 
 };
