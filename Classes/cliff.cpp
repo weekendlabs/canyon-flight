@@ -10,8 +10,8 @@ Cliff::Cliff() {
 
 void Cliff::spawnCliff(cocos2d::Layer * layer) {
     counter += SCALE_960_HEIGHT(0.075, visibleSize.height);
+    CCLOG("%.2f", counter);
     double sineValue = sin(counter);
-    counter += sin(counter * 0.01);
     
     // |-- targetX -|-gw--|- remaining -| = visibleWidth
     // |-Left Cliff-|-Gap-|-Right Cliff-| = visibleWidth

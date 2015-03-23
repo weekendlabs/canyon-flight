@@ -32,7 +32,7 @@ bool GameScene::init()
     visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
-    cliffSpawnRate = SCALE_960_HEIGHT(0.15, visibleSize.height);
+    cliffSpawnRate = SCALE_960_HEIGHT(0.05, visibleSize.height);
     
     PhysicsBody* edgeBody = PhysicsBody::createEdgeBox(visibleSize,
       			PHYSICSBODY_MATERIAL_DEFAULT, 3);
@@ -44,7 +44,7 @@ bool GameScene::init()
 
     this->addChild(edgeNode);
 
-    double circleRadius = (visibleSize.width * 0.05) / 2;
+    double circleRadius = (visibleSize.width * SCALE_640_WIDTH(0.05, visibleSize.width)) / 2;
     circle = Sprite::create("circle.png");
     circle->setPosition(Vec2((visibleSize.width - circleRadius) * 0.5, (visibleSize.height - circleRadius) * 0.5));
     circle->setScale((circleRadius * 2) / circle->getContentSize().width, (circleRadius * 2) / circle->getContentSize().height);

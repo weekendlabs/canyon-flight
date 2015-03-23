@@ -17,6 +17,7 @@ private:
     cocos2d::Texture2D * cliffTexture;
     
     double counter = 0;
+    double counterAcceleration = 0.01;
 };
 
 #endif /* defined(__canyon_flight__cliff__) */
