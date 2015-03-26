@@ -1,6 +1,8 @@
+- Change game name to sineball (Import classes into new project)
 - Launch/Splash screen
+- Game help screen
 - WeekendLabs account -> iOS (99USD) / Android (25USD) 
-- WeekendLabs website (Static site using AWS S3)
+- WeekendLabs website (Add content)
 - Making the game difficult
   - Increasing the game speed
     - Keep decreasing the schedule in gameScene.cpp and moveBy duration in cliff.cpp
