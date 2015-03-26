@@ -10,14 +10,13 @@ Cliff::Cliff() {
 
 void Cliff::spawnCliff(cocos2d::Layer * layer) {
     counter += SCALE_960_HEIGHT(0.075, visibleSize.height);
-    CCLOG("%.2f", counter);
     double sineValue = sin(counter);
     
     // |-- targetX -|-gw--|- remaining -| = visibleWidth
     // |-Left Cliff-|-Gap-|-Right Cliff-| = visibleWidth
     
     // visibleWidth * 0.25 <= gapWidth <= visibleWidth * 0.5
-    const double MAX_GAP_WIDTH = SCALE_640_WIDTH(visibleSize.width * 0.55, visibleSize.width);
+    const double MAX_GAP_WIDTH = visibleSize.width * 0.5;
     double gapWidth = MAX_GAP_WIDTH;
     
     // ((Input - InputLow) / (InputHigh - InputLow)) * (OutputHigh - OutputLow) + OutputLow;
@@ -27,15 +26,17 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
 
     // ------- Left Cliff -------
     double leftCliffWidth = targetX - gapWidth;
+    double cliffHeight = SCALE_960_HEIGHT(100, visibleSize.height);
 
     Sprite* leftCliff = Sprite::create("cliff.png");
     
     leftCliff->setScaleX(leftCliffWidth / leftCliff->getContentSize().width);
+    leftCliff->setScaleY(cliffHeight / leftCliff->getContentSize().height);
     leftCliff->setColor(Color3B::BLACK);
     leftCliff->setPosition(Point(origin.x + leftCliffWidth * 0.5, visibleSize.height + leftCliff->getContentSize().height));
 
     //Adding physics body
-    PhysicsBody* leftCliffBody = PhysicsBody::createBox(Size(leftCliffWidth,leftCliff->getContentSize().height));
+    PhysicsBody* leftCliffBody = PhysicsBody::createBox(Size(leftCliffWidth, cliffHeight));
     leftCliffBody->setDynamic(false);
     leftCliffBody->setCollisionBitmask(CLIFF_COLLISION_MASK);
     leftCliffBody->setContactTestBitmask(true);
@@ -48,11 +49,12 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     Sprite* rightCliff = Sprite::create("cliff.png");
     
     rightCliff->setScaleX(rightCliffWidth / rightCliff->getContentSize().width);
+    rightCliff->setScaleY(cliffHeight / rightCliff->getContentSize().height);
     rightCliff->setColor(Color3B::BLACK);
     rightCliff->setPosition(Point(visibleSize.width - rightCliffWidth * 0.5, visibleSize.height + rightCliff->getContentSize().height));
     
     //Adding physics body
-    PhysicsBody* rightCliffBody = PhysicsBody::createBox(Size(rightCliffWidth,rightCliff->getContentSize().height));
+    PhysicsBody* rightCliffBody = PhysicsBody::createBox(Size(rightCliffWidth, cliffHeight));
     rightCliffBody->setDynamic(false);
     rightCliffBody->setCollisionBitmask(CLIFF_COLLISION_MASK);
     rightCliffBody->setContactTestBitmask(true);
@@ -61,7 +63,7 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     layer->addChild(rightCliff, 1);
 
     // ------ Moving the cliffs and shadows to the bottom ------
-    MoveBy* moveBy = MoveBy::create(5 * 0.5, Vec2(0, -visibleSize.height * 1.2));
+    MoveBy* moveBy = MoveBy::create(SCALE_960_HEIGHT(2.5, visibleSize.height), Vec2(0, -(visibleSize.height + cliffHeight)));
     RemoveSelf* remove = RemoveSelf::create();
 
     leftCliff->runAction(Sequence::create(moveBy, remove, NULL));

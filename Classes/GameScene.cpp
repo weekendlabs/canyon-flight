@@ -34,7 +34,7 @@ bool GameScene::init()
     visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
-    cliffSpawnRate = SCALE_960_HEIGHT(0.05, visibleSize.height);
+    cliffSpawnRate = SCALE_960_HEIGHT(CLIFF_SPAWN_RATE, visibleSize.height);
     
     PhysicsBody* edgeBody = PhysicsBody::createEdgeBox(visibleSize,
       			PHYSICSBODY_MATERIAL_DEFAULT, 3);
@@ -61,19 +61,19 @@ bool GameScene::init()
 
     EventListenerPhysicsContact* contactListener = EventListenerPhysicsContact::create();
     contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin,this);
-   _eventDispatcher->addEventListenerWithSceneGraphPriority(contactListener,this);
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(contactListener,this);
 
     Device::setAccelerometerEnabled(true);
     EventListenerAcceleration* listener = EventListenerAcceleration::create(CC_CALLBACK_2(GameScene::onAcceleration,this));
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener,this);
     
     //adding score label
-    __String *tempScore = __String::createWithFormat("%i",score);
+    __String *tempScore = __String::createWithFormat("%i", score);
     //std::string tempScore = score + "";
     scoreLabel = Label::createWithTTF(tempScore->getCString(), TTF_FONT_FILE, visibleSize.height * SCORE_LABEL_SCALE);
     scoreLabel->setColor(Color3B::WHITE);
-    scoreLabel->enableOutline(Color4B::BLACK,10);
-    scoreLabel->setPosition(Vec2(visibleSize.width * 0.5 + origin.x, visibleSize.height * 0.75 + origin.y));
+    scoreLabel->enableOutline(Color4B::BLACK, 10);
+    scoreLabel->setPosition(Vec2(visibleSize.width * 0.80 + origin.x, visibleSize.height * 0.90 + origin.y));
 
     this->addChild(scoreLabel, 1001);
     

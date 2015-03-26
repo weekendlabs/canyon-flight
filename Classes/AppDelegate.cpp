@@ -42,13 +42,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto fileUtils = FileUtils::getInstance();
     auto frame = glview->getFrameSize();
     fileUtils->addSearchPath("iphonehd");
-    
-    if (640 == frame.width || 640 == frame.height) {
-        glview->setDesignResolutionSize(640, 960, ResolutionPolicy::NO_BORDER);
-    } else if (583 == frame.width || 583 == frame.width) {
-        glview->setDesignResolutionSize(583, 960, ResolutionPolicy::NO_BORDER);
-    }
-
 
     // create a scene. it's an autorelease object
     auto scene = MainMenuScene::createScene();
