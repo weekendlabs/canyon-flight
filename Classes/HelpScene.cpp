@@ -70,7 +70,7 @@ bool HelpScene::init()
     circle->runAction(repeatCircle);
     
     // ---------------- Labels -------------------
-    Label * instructionLabel = Label::createWithTTF("        Tilt to move the ball\nKeep ball inside white space", TTF_FONT_FILE, SCALE_960_HEIGHT(30, visibleSize.height));
+    Label * instructionLabel = Label::createWithTTF("        Tilt to move the ball\nStay inside the white space", TTF_FONT_FILE, SCALE_960_HEIGHT(30, visibleSize.height));
 	instructionLabel->setColor(Color3B::BLACK);
 	instructionLabel->enableOutline(Color4B::WHITE);
 	instructionLabel->setPosition(Vec2(visibleSize.width * 0.5, visibleSize.height * 0.9));
