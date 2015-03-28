@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+#include "MainMenuScene.h"
 
 USING_NS_CC;
 
@@ -22,7 +22,7 @@ void AppDelegate::initGLContextAttrs()
     GLView::setGLContextAttrs(glContextAttrs);
 }
 
-bool AppDelegate::applicationDidFinishLaunching() {
+bool AppDelegate::applicationDidFinishLaunching() {    
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
@@ -36,9 +36,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
+    
+    // @TODO: Add multi-device search paths code
+    // Temporary stuff for now
+    auto fileUtils = FileUtils::getInstance();
+    auto frame = glview->getFrameSize();
+    fileUtils->addSearchPath("iphonehd");
 
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+    auto scene = MainMenuScene::createScene();
 
     // run
     director->runWithScene(scene);

@@ -1,1 +1,5 @@
 bin/
+*.DS_Store
+cocos2d/cocos/platform/android/java/gen/
+proj.android/gen/
+proj.android/obj/
