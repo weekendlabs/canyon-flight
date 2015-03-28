@@ -3,3 +3,5 @@ bin/
 cocos2d/cocos/platform/android/java/gen/
 proj.android/gen/
 proj.android/obj/
+cocos2d/build/build/
+proj.ios_mac/build/
