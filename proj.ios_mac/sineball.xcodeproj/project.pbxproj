@@ -14,6 +14,7 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
+		4703B2B91AC6736B00456B8C /* HelpScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4703B2B71AC6736B00456B8C /* HelpScene.cpp */; };
 		47843E981AC63DB000495CE2 /* AdmobHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47843E881AC63DB000495CE2 /* AdmobHelper.cpp */; };
 		47843E9A1AC63DB000495CE2 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47843E8D1AC63DB000495CE2 /* BannerViewController.m */; };
 		47843E9B1AC63DB000495CE2 /* cliff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47843E8E1AC63DB000495CE2 /* cliff.cpp */; };
@@ -115,6 +116,8 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4703B2B71AC6736B00456B8C /* HelpScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelpScene.cpp; sourceTree = "<group>"; };
+		4703B2B81AC6736B00456B8C /* HelpScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpScene.h; sourceTree = "<group>"; };
 		47843E881AC63DB000495CE2 /* AdmobHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdmobHelper.cpp; sourceTree = "<group>"; };
 		47843E891AC63DB000495CE2 /* AdmobHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdmobHelper.h; sourceTree = "<group>"; };
 		47843E8A1AC63DB000495CE2 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
@@ -332,6 +335,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4703B2B71AC6736B00456B8C /* HelpScene.cpp */,
+				4703B2B81AC6736B00456B8C /* HelpScene.h */,
 				47843E881AC63DB000495CE2 /* AdmobHelper.cpp */,
 				47843E891AC63DB000495CE2 /* AdmobHelper.h */,
 				47843E8A1AC63DB000495CE2 /* AppDelegate.cpp */,
@@ -545,6 +550,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				4703B2B91AC6736B00456B8C /* HelpScene.cpp in Sources */,
 				47843E9B1AC63DB000495CE2 /* cliff.cpp in Sources */,
 				47843E9C1AC63DB000495CE2 /* GameScene.cpp in Sources */,
 				47843E9F1AC63DB000495CE2 /* obstacle.cpp in Sources */,

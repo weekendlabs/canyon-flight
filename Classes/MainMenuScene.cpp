@@ -57,7 +57,7 @@ bool MainMenuScene::init()
     	def->flush();
     	startButton = MenuItemLabel::create(startLabel, CC_CALLBACK_1(MainMenuScene::GotoHelpScene, this));
     }
-
+    startButton = MenuItemLabel::create(startLabel, CC_CALLBACK_1(MainMenuScene::GotoHelpScene, this));
     
     Menu * menu = Menu::createWithItem(startButton);
     this->addChild(menu);

@@ -1,7 +1,9 @@
 #include "GameScene.h"
 #include "definitions.h"
 #include "MainMenuScene.h"
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "AdmobHelper.h"
+#endif
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "iOSHelper.h"
 #endif
@@ -50,6 +52,7 @@ bool GameScene::init()
     circle = Sprite::create("circle.png");
     circle->setPosition(Vec2((visibleSize.width - circleRadius) * 0.5, (visibleSize.height - circleRadius) * 0.5));
     circle->setScale((circleRadius * 2) / circle->getContentSize().width, (circleRadius * 2) / circle->getContentSize().height);
+    circle->setColor(Color3B::BLACK);
     
     PhysicsBody* circleBody = PhysicsBody::createCircle(circleRadius);
     circleBody->setCollisionBitmask(CIRCLE_COLLISION_MASK);
