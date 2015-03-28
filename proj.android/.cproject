@@ -171,15 +171,14 @@
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-		<project id="canyon-flight.null.31159645" name="canyon-flight"/>
+		<project id="sineball.null.31159645" name="sineball"/>
 	</storageModule>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Default">
-			<resource resourceType="PROJECT" workspacePath="/canyon-flight"/>
+			<resource resourceType="PROJECT" workspacePath="/sineball"/>
 		</configuration>
 		<configuration configurationName="Debug">
-			<resource resourceType="PROJECT" workspacePath="/canyon-flight"/>
+			<resource resourceType="PROJECT" workspacePath="/sineball"/>
 		</configuration>
 	</storageModule>
 </cproject>
-

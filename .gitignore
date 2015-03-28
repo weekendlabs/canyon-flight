@@ -1,3 +1,7 @@
-cocos2d/
-proj.ios_mac/canyon-flight.xcodeproj/project.xcworkspace/
-proj.ios_mac/canyon-flight.xcodeproj/xcuserdata/
+bin/
+*.DS_Store
+cocos2d/cocos/platform/android/java/gen/
+proj.android/gen/
+proj.android/obj/
+cocos2d/build/build/
+proj.ios_mac/build/
