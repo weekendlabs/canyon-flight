@@ -53,7 +53,6 @@ void AdmobHelper::showAd()
 
 void AdmobHelper::hideAd()
 {
-    CCLOG("hideAd() called");
     isAdShowing = false;
     return; //nothing
 }
@@ -61,7 +60,6 @@ void AdmobHelper::hideAd()
 
 void AdmobHelper::showAd()
 {
-    CCLOG("showAd() called");
     isAdShowing = true;
     return; //nothing;
 

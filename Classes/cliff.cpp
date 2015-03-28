@@ -13,12 +13,10 @@ Cliff::Cliff() {
 void Cliff::spawnCliff(cocos2d::Layer * layer) {
     velocity += 0.00125;
     counter += velocity;
-    CCLOG("%.2f", counter);
     double sineValue = sin(counter);
     
     if (fabs(counter) >= step) {
         velocity *= -1;
-        CCLOG("Velocity: %.2f", velocity);
         step += 10.0;
     }
     

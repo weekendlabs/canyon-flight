@@ -137,7 +137,6 @@ bool MainMenuScene::init()
 
 void MainMenuScene::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event){
 	if(keyCode == EventKeyboard::KeyCode::KEY_ESCAPE || keyCode == EventKeyboard::KeyCode::KEY_BACK){
-		CCLOG("You pressed back button");
 		Director::getInstance()->end();
 		exit(0);
 	}
