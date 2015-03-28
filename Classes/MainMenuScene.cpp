@@ -2,6 +2,7 @@
 #include "GameScene.h"
 #include "definitions.h"
 #include "AdmobHelper.h"
+#include "HelpScene.h"
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "iOSHelper.h"
 #endif
@@ -36,15 +37,27 @@ bool MainMenuScene::init()
     
     visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    UserDefault *def = UserDefault::getInstance();
     
     Label * gameTitle = Label::createWithTTF("SineBall", TTF_FONT_FILE, SCALE_960_HEIGHT(100, visibleSize.height));
     gameTitle->setColor(Color3B::WHITE);
     gameTitle->enableOutline(Color4B::BLACK);
-    gameTitle->setPosition(Vec2(visibleSize.width * 0.5, visibleSize.height * (3.0/4.0)));
+    gameTitle->setPosition(Vec2(visibleSize.width * 0.5, visibleSize.height * (3.5/4.0)));
     this->addChild(gameTitle);
     
+    int visitedHelpScreen = def->getIntegerForKey("VISITEDHELPSCREEN",0);
+
     Label * startLabel = Label::createWithTTF("Start", TTF_FONT_FILE, SCALE_960_HEIGHT(80, visibleSize.height));
-    MenuItemLabel * startButton = MenuItemLabel::create(startLabel, CC_CALLBACK_1(MainMenuScene::GotoGameScene, this));
+    MenuItemLabel * startButton;
+    if(visitedHelpScreen){
+    	startButton = MenuItemLabel::create(startLabel, CC_CALLBACK_1(MainMenuScene::GotoGameScene, this));
+    }
+    else{
+    	def->setIntegerForKey("VISITEDHELPSCREEN",1);
+    	def->flush();
+    	startButton = MenuItemLabel::create(startLabel, CC_CALLBACK_1(MainMenuScene::GotoHelpScene, this));
+    }
+
     
     Menu * menu = Menu::createWithItem(startButton);
     this->addChild(menu);
@@ -67,7 +80,7 @@ bool MainMenuScene::init()
     this->addChild(highScoreLabel);
     
 
-    UserDefault *def = UserDefault::getInstance();
+
     int highscore = def->getIntegerForKey("HIGHSCORE",0);
 
     if(score > highscore){
@@ -134,6 +147,10 @@ void MainMenuScene::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos
 
 void MainMenuScene::GotoGameScene(cocos2d::Ref * sender) {
     auto scene = GameScene::createScene();
-    
+    Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
+}
+
+void MainMenuScene::GotoHelpScene(cocos2d::Ref * sender) {
+	auto scene = HelpScene::createScene();
     Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
 }
