@@ -1,7 +1,7 @@
 #import "BannerViewController.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
 
-@interface BannerViewController()
+@interface BannerViewController()<GADBannerViewDelegate>
 
 @end
 
@@ -87,7 +87,6 @@
 
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView
 {
-    NSLog(@"adViewDidReceiveAd");
     _bannerLoaded = YES;
     [UIView animateWithDuration:0.25 animations:^{
         [self.view setNeedsLayout];
@@ -97,7 +96,6 @@
 
 - (void)adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error
 {
-    NSLog(@"adView didFailToReceiveAdWithError");
     _bannerLoaded = NO;
     [UIView animateWithDuration:0.25 animations:^{
         [self.view setNeedsLayout];
