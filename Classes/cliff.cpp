@@ -6,11 +6,21 @@ USING_NS_CC;
 Cliff::Cliff() {
     visibleSize = Director::getInstance( )->getVisibleSize( );
     origin = Director::getInstance( )->getVisibleOrigin( );
+    
+    velocity = SCALE_960_HEIGHT(0.075, visibleSize.height);
 }
 
 void Cliff::spawnCliff(cocos2d::Layer * layer) {
-    counter += SCALE_960_HEIGHT(0.075, visibleSize.height);
+    velocity += 0.00125;
+    counter += velocity;
+    CCLOG("%.2f", counter);
     double sineValue = sin(counter);
+    
+    if (fabs(counter) >= step) {
+        velocity *= -1;
+        CCLOG("Velocity: %.2f", velocity);
+        step += 10.0;
+    }
     
     // |-- targetX -|-gw--|- remaining -| = visibleWidth
     // |-Left Cliff-|-Gap-|-Right Cliff-| = visibleWidth

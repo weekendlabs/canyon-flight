@@ -2,6 +2,7 @@
 #define __canyon_flight__cliff__
 
 #include "cocos2d.h"
+#include "definitions.h"
 
 class Cliff
 {
@@ -17,6 +18,8 @@ private:
     cocos2d::Texture2D * cliffTexture;
     
     double counter = 0;
+    double step = 25.0;
+    double velocity = 0;
     double counterAcceleration = 0.01;
 };
 

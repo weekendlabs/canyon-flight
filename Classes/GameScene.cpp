@@ -132,12 +132,12 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
 	PhysicsBody* a = contact.getShapeA()->getBody();
 	PhysicsBody* b = contact.getShapeB()->getBody();
 
-	if ((CLIFF_COLLISION_MASK == a->getCollisionBitmask() && CIRCLE_COLLISION_MASK == b->getCollisionBitmask()) ||
-        (CIRCLE_COLLISION_MASK == a->getCollisionBitmask() && CLIFF_COLLISION_MASK == b->getCollisionBitmask())) {
-        auto * scene = MainMenuScene::createScene((int)floor(score));
-        
-        Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
-	}
+//	if ((CLIFF_COLLISION_MASK == a->getCollisionBitmask() && CIRCLE_COLLISION_MASK == b->getCollisionBitmask()) ||
+//        (CIRCLE_COLLISION_MASK == a->getCollisionBitmask() && CLIFF_COLLISION_MASK == b->getCollisionBitmask())) {
+//        auto * scene = MainMenuScene::createScene((int)floor(score));
+//        
+//        Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
+//	}
 
 	return true;
 }
