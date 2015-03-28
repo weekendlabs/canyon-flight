@@ -33,7 +33,7 @@ private:
 
     bool onContactBegin(cocos2d::PhysicsContact &contact);
 
-    int score = 0;
+    double score = 0;
 
     cocos2d::Label* scoreLabel;
     

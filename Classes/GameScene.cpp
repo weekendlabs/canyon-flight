@@ -102,7 +102,6 @@ bool GameScene::init()
 
 void GameScene::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event){
 	if(keyCode == EventKeyboard::KeyCode::KEY_ESCAPE || keyCode == EventKeyboard::KeyCode::KEY_BACK){
-		CCLOG("You pressed back button from game scene");
 		auto * scene = MainMenuScene::createScene();
 		Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
 	}
@@ -111,8 +110,8 @@ void GameScene::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::
 void GameScene::spawnCliff() {
     if (deltaAccum >= cliffSpawnRate) {
         cliff.spawnCliff(this);
-        score = score + 1;
-        __String *tempScore = __String::createWithFormat("%i", score);
+        score = score + 0.2;
+        __String *tempScore = __String::createWithFormat("%i", (int)floor(score));
         scoreLabel->setString(tempScore->getCString());
         
         deltaAccum = 0;
@@ -135,7 +134,7 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
 
 	if ((CLIFF_COLLISION_MASK == a->getCollisionBitmask() && CIRCLE_COLLISION_MASK == b->getCollisionBitmask()) ||
         (CIRCLE_COLLISION_MASK == a->getCollisionBitmask() && CLIFF_COLLISION_MASK == b->getCollisionBitmask())) {
-        auto * scene = MainMenuScene::createScene(score);
+        auto * scene = MainMenuScene::createScene((int)floor(score));
         
         Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
 	}
