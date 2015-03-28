@@ -51,17 +51,17 @@ bool MainMenuScene::init()
     MenuItemLabel * startButton;
     if(visitedHelpScreen){
     	startButton = MenuItemLabel::create(startLabel, CC_CALLBACK_1(MainMenuScene::GotoGameScene, this));
-    }
-    else{
+    } else {
     	def->setIntegerForKey("VISITEDHELPSCREEN",1);
     	def->flush();
     	startButton = MenuItemLabel::create(startLabel, CC_CALLBACK_1(MainMenuScene::GotoHelpScene, this));
     }
-    startButton = MenuItemLabel::create(startLabel, CC_CALLBACK_1(MainMenuScene::GotoHelpScene, this));
+    startButton->setPosition(startButton->getPositionX(), startButton->getPositionY() + SCALE_960_HEIGHT(100, visibleSize.height));
+    Label * helpLabel = Label::createWithTTF("Help", TTF_FONT_FILE, SCALE_960_HEIGHT(40, visibleSize.height));
+    MenuItemLabel * helpButton = MenuItemLabel::create(helpLabel, CC_CALLBACK_1(MainMenuScene::GotoOnlyHelpScene, this));
     
-    Menu * menu = Menu::createWithItem(startButton);
+    Menu * menu = Menu::create(startButton, helpButton, NULL);
     this->addChild(menu);
-    
     
     std::string creditsString;
     
@@ -78,7 +78,6 @@ bool MainMenuScene::init()
     Label * highScoreLabel = Label::createWithTTF("High", TTF_FONT_FILE, SCALE_960_HEIGHT(30, visibleSize.height));
     highScoreLabel->setPosition(Vec2(visibleSize.width * 0.5, visibleSize.height * (1.25 / 4.0)));
     this->addChild(highScoreLabel);
-    
 
 
     int highscore = def->getIntegerForKey("HIGHSCORE",0);
@@ -152,5 +151,10 @@ void MainMenuScene::GotoGameScene(cocos2d::Ref * sender) {
 
 void MainMenuScene::GotoHelpScene(cocos2d::Ref * sender) {
 	auto scene = HelpScene::createScene();
+    Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
+}
+
+void MainMenuScene::GotoOnlyHelpScene(cocos2d::Ref * sender) {
+    auto scene = HelpScene::createScene(false);
     Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
 }

@@ -9,7 +9,9 @@
 
 USING_NS_CC;
 
-Scene* HelpScene::createScene()
+bool shouldGotoGameScene;
+
+Scene* HelpScene::createScene(bool gotoGameScene)
 {
     
     // 'scene' is an autorelease object
@@ -20,6 +22,8 @@ Scene* HelpScene::createScene()
 
     // add layer as a child to scene
     scene->addChild(layer);
+    
+    shouldGotoGameScene = gotoGameScene;
 
     // return the scene
     return scene;
@@ -95,7 +99,12 @@ bool HelpScene::init()
 }
 
 bool HelpScene::onTouchBegan(Touch* touch, Event* event){
-	auto scene = GameScene::createScene();
+    Scene * scene = nullptr;
+    if (shouldGotoGameScene) {
+        scene = GameScene::createScene();
+    } else {
+        scene = MainMenuScene::createScene();
+    }
 	Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
 }
 

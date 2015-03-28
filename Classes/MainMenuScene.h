@@ -21,6 +21,8 @@ private:
     void GotoGameScene(cocos2d::Ref * sender);
 
     void GotoHelpScene(cocos2d::Ref * sender);
+    
+    void GotoOnlyHelpScene(cocos2d::Ref * sender);
 
     void onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event);
 
