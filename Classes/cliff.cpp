@@ -71,7 +71,8 @@ void Cliff::spawnCliff(cocos2d::Layer * layer) {
     layer->addChild(rightCliff, 1);
 
     // ------ Moving the cliffs and shadows to the bottom ------
-    MoveBy* moveBy = MoveBy::create(SCALE_960_HEIGHT(2.5, visibleSize.height), Vec2(0, -(visibleSize.height + cliffHeight * 2)));
+    double duration = ((visibleSize.height - 960) / (2208 - 960)) * (3.5 - 2.5) + 2.5;
+    MoveBy* moveBy = MoveBy::create(duration, Vec2(0, -(visibleSize.height + visibleSize.height * 0.25)));
     RemoveSelf* remove = RemoveSelf::create();
 
     leftCliff->runAction(Sequence::create(moveBy, remove, NULL));

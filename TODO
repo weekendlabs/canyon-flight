@@ -1,2 +1,3 @@
-- WeekendLabs account -> iOS (99USD) / Android (25USD) 
-- WeekendLabs website (Add content)
+- Fix game speed
+- Handle interruption (phone call, home screen, etc...)
+- Leaderboard (invoke with the score)

@@ -36,7 +36,7 @@ bool GameScene::init()
     visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
-    cliffSpawnRate = SCALE_960_HEIGHT(CLIFF_SPAWN_RATE, visibleSize.height);
+    cliffSpawnRate = ((visibleSize.height - 960) / (2208 - 960)) * (MAX_CLIFF_SPAWN_RATE - MIN_CLIFF_SPAWN_RATE) + MIN_CLIFF_SPAWN_RATE;;
     
     PhysicsBody* edgeBody = PhysicsBody::createEdgeBox(visibleSize,
       			PHYSICSBODY_MATERIAL_DEFAULT, 3);
